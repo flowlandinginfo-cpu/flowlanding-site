@@ -1,26 +1,1437 @@
 <!doctype html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlowLanding — AI Business Systems สำหรับเจ้าของธุรกิจ SME</title>
-    <meta name="description" content="FlowLanding ออกแบบ AI Business Systems — Automation, Dashboard และที่ปรึกษาการเงินธุรกิจระดับ Institutional สำหรับ SME ไทยที่ต้องการเติบโตอย่างยั่งยืน">
-    <meta name="author" content="FlowLanding" />
-    
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="FlowLanding — AI Automation สำหรับ SME ไทย">
-  <meta name="twitter:title" content="FlowLanding — AI Automation สำหรับ SME ไทย">
-  <meta property="og:description" content="FlowLanding ออกแบบระบบ AI Automation และแดชบอร์ดธุรกิจสำหรับ SME ไทย ให้เจ้าของรู้ตัวเลขแบบ Real-time ลดงาน Manual และเติบโตได้">
-  <meta name="twitter:description" content="FlowLanding ออกแบบระบบ AI Automation และแดชบอร์ดธุรกิจสำหรับ SME ไทย ให้เจ้าของรู้ตัวเลขแบบ Real-time ลดงาน Manual และเติบโตได้">
-  <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/eRBHeNOAOHTwqE3aV883YrBOnnd2/social-images/social-1772460694207-Generated_Image_February_01,_2026_-_11_06PM.webp">
-  <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/eRBHeNOAOHTwqE3aV883YrBOnnd2/social-images/social-1772460694207-Generated_Image_February_01,_2026_-_11_06PM.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="module" crossorigin src="./assets/index-DrUYAb9G.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-ZhoLn1GZ.css">
-</head>
+<head>
+<meta charset="utf-8" />
+<title>FlowLanding — AI Business Systems for SME Owners</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* warm cream palette */
+    --cream-0: #FBF6EE;
+    --cream-1: #F6EEDF;
+    --cream-2: #EFE3CE;
+    --cream-3: #E6D5B8;
 
-  <body>
-    <div id="root"></div>
-  </body>
+    /* deep warm reds */
+    --red-50:  #FBEAE3;
+    --red-200: #EAB29C;
+    --red-400: #D5613D;
+    --red-500: #C5421C;
+    --red-600: #A8321A;
+    --red-700: #7A2114;
+    --red-800: #4F1A12;
+
+    /* luxury gold (from logo) */
+    --gold-300: #F6CE69;
+    --gold-400: #F2B731;
+    --gold-500: #DBA01D;
+    --gold-600: #B07A12;
+
+    /* charcoal text */
+    --ink-900: #1A1410;
+    --ink-700: #3E332B;
+    --ink-500: #6F5F52;
+    --ink-400: #8A7868;
+    --ink-300: #B0A293;
+
+    --line: rgba(64, 30, 18, 0.10);
+    --line-soft: rgba(64, 30, 18, 0.05);
+
+    --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,251,243,0.50));
+    --glass-bg-tint: linear-gradient(150deg, rgba(255,247,236,0.85), rgba(252,229,210,0.55));
+    --glass-border: 1px solid rgba(255,255,255,0.7);
+    --glass-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 0 0 1px rgba(124, 50, 26, 0.04),
+      0 24px 60px -28px rgba(124, 50, 26, 0.30),
+      0 6px 18px -8px rgba(124, 50, 26, 0.14);
+
+    --grad-red: linear-gradient(135deg, #D5613D 0%, #B0331A 50%, #7A2114 100%);
+    --grad-warm: radial-gradient(60% 70% at 70% 20%, rgba(245,182,49,0.22), transparent 60%),
+                 radial-gradient(50% 60% at 10% 90%, rgba(213,97,61,0.18), transparent 60%),
+                 radial-gradient(80% 90% at 50% 50%, rgba(255,243,225,1) 0%, rgba(246,238,223,1) 60%, rgba(238,222,196,1) 100%);
+
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "IBM Plex Sans Thai", "IBM Plex Sans", system-ui, sans-serif;
+    color: var(--ink-900);
+    background: var(--cream-1);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.55;
+  }
+  ::selection { background: rgba(213,97,61,0.25); }
+
+  /* ambient warm canvas */
+  .canvas {
+    position: relative;
+    background: var(--grad-warm);
+    overflow: hidden;
+  }
+  .canvas::before, .canvas::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    opacity: 0.55;
+    z-index: 0;
+  }
+  .canvas::before {
+    width: 720px; height: 720px;
+    background: radial-gradient(circle, rgba(245,182,49,0.45), transparent 65%);
+    top: -200px; right: -160px;
+    animation: drift1 28s ease-in-out infinite alternate;
+  }
+  .canvas::after {
+    width: 640px; height: 640px;
+    background: radial-gradient(circle, rgba(213,97,61,0.40), transparent 65%);
+    bottom: -260px; left: -140px;
+    animation: drift2 34s ease-in-out infinite alternate;
+  }
+  @keyframes drift1 { from { transform: translate(0,0) } to { transform: translate(-60px, 80px) } }
+  @keyframes drift2 { from { transform: translate(0,0) } to { transform: translate(80px, -60px) } }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+  @media (max-width: 720px){ .wrap { padding: 0 22px; } }
+
+  /* type */
+  h1, h2, h3, h4 { font-family: "Noto Serif Thai", "Instrument Serif", serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; color: var(--ink-900); margin: 0; }
+  h1 { font-size: clamp(40px, 5.4vw, 76px); letter-spacing: -0.02em; }
+  h2 { font-size: clamp(30px, 3.8vw, 52px); letter-spacing: -0.018em; }
+  h3 { font-size: clamp(22px, 2.4vw, 30px); }
+  p { margin: 0; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red-600);
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(213,97,61,0.18);
+    backdrop-filter: blur(8px);
+  }
+  .eyebrow::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red-500); box-shadow: 0 0 0 3px rgba(213,97,61,0.18);
+  }
+
+  .ital { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 22px;
+    border-radius: 999px;
+    font: 500 15px/1 "IBM Plex Sans Thai", sans-serif;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  }
+  .btn-primary {
+    color: #fff;
+    background: var(--grad-red);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.25) inset,
+      0 12px 24px -8px rgba(168, 50, 26, 0.45),
+      0 2px 6px rgba(168, 50, 26, 0.25);
+  }
+  .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 18px 30px -8px rgba(168,50,26,0.55); }
+  .btn-ghost {
+    color: var(--ink-900);
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(64,30,18,0.10);
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.75); }
+  .btn .arrow { width: 18px; height: 18px; display:inline-block; }
+
+  /* glass surface */
+  .glass {
+    background: var(--glass-bg);
+    border-radius: var(--radius-lg);
+    border: var(--glass-border);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: var(--glass-shadow);
+  }
+  .glass-sm { border-radius: var(--radius-md); }
+
+  /* ============ NAV ============ */
+  nav.top {
+    position: sticky; top: 16px; z-index: 50;
+    margin: 16px auto 0;
+    max-width: 1240px;
+    padding: 0 32px;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,251,243,0.55));
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(22px) saturate(140%);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+  .brand img { width: 28px; height: 28px; }
+  .nav-links { display: flex; gap: 6px; align-items: center; }
+  .nav-links a {
+    color: var(--ink-700); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 14px; border-radius: 999px; transition: background .2s;
+  }
+  .nav-links a:hover { background: rgba(255,255,255,0.6); color: var(--ink-900); }
+  @media (max-width: 880px) { .nav-links { display:none; } }
+  nav.top .btn { padding: 10px 16px; font-size: 13px; }
+
+  /* ============ HERO ============ */
+  .hero { padding: 80px 0 120px; position: relative; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 980px){ .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .hero h1 .accent {
+    background: linear-gradient(135deg, #D5613D, #7A2114);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-family: "Instrument Serif", "Noto Serif Thai", serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero-sub {
+    margin-top: 28px;
+    font-size: 18px;
+    color: var(--ink-700);
+    max-width: 540px;
+    line-height: 1.7;
+  }
+  .hero-bullets {
+    margin-top: 22px;
+    display: flex; flex-wrap: wrap; gap: 8px 10px;
+  }
+  .hero-bullets span {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13.5px; font-weight: 500; color: var(--ink-700);
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(64,30,18,0.06);
+  }
+  .hero-bullets span::before {
+    content: ""; width: 14px; height: 14px; border-radius: 50%;
+    background: linear-gradient(135deg, #F2B731, #DBA01D);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08);
+    flex: none;
+  }
+  .hero-cta { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-meta { display: flex; gap: 18px; align-items: center; margin-top: 28px; color: var(--ink-500); font-size: 13px; }
+  .avatars { display: flex; }
+  .avatars span {
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 2px solid var(--cream-1);
+    background: linear-gradient(135deg, #F2B731, #C5421C);
+    margin-left: -8px;
+  }
+  .avatars span:first-child { margin-left: 0; }
+  .avatars span:nth-child(2) { background: linear-gradient(135deg, #7A2114, #C5421C); }
+  .avatars span:nth-child(3) { background: linear-gradient(135deg, #DBA01D, #4F1A12); }
+  .avatars span:nth-child(4) { background: linear-gradient(135deg, #F6CE69, #B0331A); }
+
+  /* hero dashboard cluster */
+  .cluster {
+    position: relative; width: 100%; min-height: 580px;
+    perspective: 1400px;
+  }
+  .float { animation: float 9s ease-in-out infinite; will-change: transform; }
+  .float.b { animation-duration: 11s; animation-delay: -3s; }
+  .float.c { animation-duration: 13s; animation-delay: -5s; }
+  .float.d { animation-duration: 10s; animation-delay: -1.5s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+    50% { transform: translateY(-12px) rotate(calc(var(--r, 0deg) + 0.6deg)); }
+  }
+
+  .card {
+    position: absolute;
+    background: var(--glass-bg);
+    border-radius: var(--radius-md);
+    border: var(--glass-border);
+    backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: var(--glass-shadow);
+    padding: 18px;
+  }
+
+  /* main hero dashboard */
+  .h-main { left: 4%; top: 30px; width: 78%; --r: -1.5deg; padding: 22px 24px; }
+  .h-main .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .h-main .title { font-weight: 600; font-size: 14px; color: var(--ink-900); }
+  .h-main .pill { font-size: 11px; padding: 4px 10px; border-radius: 999px; background: rgba(213,97,61,0.10); color: var(--red-600); font-weight: 600; }
+  .h-main .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+  .stat .label { font-size: 11px; color: var(--ink-500); letter-spacing: 0.04em; text-transform: uppercase; }
+  .stat .value { font-family: "Noto Serif Thai", serif; font-size: 22px; color: var(--ink-900); margin-top: 2px; }
+  .stat .delta { font-size: 11px; color: var(--red-500); font-weight: 600; margin-top: 2px; }
+  .stat .delta.pos { color: #2C7A4B; }
+
+  .chart {
+    height: 110px; position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.0));
+    border-radius: 12px; padding: 8px;
+    overflow: hidden;
+  }
+  .chart svg { width: 100%; height: 100%; display:block; }
+
+  /* hero secondary - LINE notification */
+  .h-line { right: -2%; top: 0; width: 280px; --r: 3deg; padding: 14px; }
+  .line-row { display: flex; align-items: flex-start; gap: 10px; }
+  .line-av { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #06C755, #038A3C); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size: 13px; flex:none; }
+  .line-meta { font-size: 11px; color: var(--ink-500); }
+  .line-name { font-weight: 600; font-size: 13px; color: var(--ink-900); }
+  .line-msg { font-size: 13px; color: var(--ink-700); margin-top: 6px; line-height: 1.5; }
+  .line-bot { margin-top: 10px; padding: 10px 12px; background: rgba(213,97,61,0.07); border-radius: 14px; border-top-left-radius: 4px; font-size: 12.5px; color: var(--ink-700); }
+  .line-bot strong { color: var(--red-600); font-weight: 600; }
+
+  /* hero invoice card */
+  .h-invoice { right: 6%; bottom: 40px; width: 240px; --r: -3deg; padding: 16px; }
+  .h-invoice .doc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .h-invoice .doc-head .tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; background: var(--gold-400); color: var(--ink-900); font-weight: 700; letter-spacing: 0.04em; }
+  .h-invoice .doc-no { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--ink-500); }
+  .h-invoice .doc-line { display: flex; justify-content: space-between; font-size: 12px; padding: 6px 0; border-bottom: 1px dashed var(--line); color: var(--ink-700); }
+  .h-invoice .doc-total { display: flex; justify-content: space-between; padding-top: 10px; font-weight: 700; }
+  .h-invoice .doc-total .num { font-family: "Noto Serif Thai", serif; color: var(--red-600); font-size: 18px; }
+
+  /* hero metric pill */
+  .h-metric { left: 0; bottom: 80px; width: 220px; --r: 2.4deg; padding: 14px 16px; }
+  .h-metric .ml { font-size: 11px; color: var(--ink-500); letter-spacing: 0.04em; text-transform: uppercase; }
+  .h-metric .mv { font-family: "Noto Serif Thai", serif; font-size: 26px; margin: 4px 0; }
+  .h-metric .mb { display: flex; gap: 3px; height: 28px; align-items: flex-end; }
+  .h-metric .mb i { display: block; width: 8px; background: linear-gradient(180deg, #F2B731, #C5421C); border-radius: 2px; }
+
+  @media (max-width: 980px){
+    .cluster { min-height: 480px; }
+    .h-main { width: 84%; }
+  }
+  @media (max-width: 600px){
+    .cluster { min-height: 420px; transform: scale(0.85); transform-origin: top center; }
+  }
+
+  /* ============ TRUST BAR ============ */
+  .trust {
+    margin-top: -60px; padding: 36px 0 80px; position: relative;
+  }
+  .trust-card { padding: 28px 36px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .trust-label {
+    font-family: "JetBrains Mono", monospace; font-size: 11.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--ink-500); flex: none;
+  }
+  .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .trust-pills span {
+    padding: 8px 14px; border-radius: 999px;
+    background: rgba(255,255,255,0.5);
+    font-size: 14px; color: var(--ink-700);
+    border: 1px solid var(--line-soft);
+  }
+
+  /* ============ SECTION SCAFFOLD ============ */
+  section { position: relative; padding: 120px 0; }
+  section.tight { padding: 90px 0; }
+  .section-head { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+  .section-head.left { margin: 0 0 56px; text-align: left; }
+  .section-head .eyebrow { margin-bottom: 22px; }
+  .section-head p { color: var(--ink-700); margin-top: 18px; font-size: 17.5px; line-height: 1.7; }
+
+  /* ============ PAIN ============ */
+  .pain { background: var(--cream-1); }
+  .pain-grid {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center;
+  }
+  @media (max-width: 880px){ .pain-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .pain-list { display: flex; flex-direction: column; gap: 12px; }
+  .pain-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 22px;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: 16px;
+    backdrop-filter: blur(18px);
+    transition: transform .25s;
+  }
+  .pain-item:hover { transform: translateX(6px); }
+  .pain-num {
+    flex: none;
+    font-family: "Instrument Serif", serif;
+    font-size: 22px; font-style: italic;
+    color: var(--red-500);
+    width: 32px;
+  }
+  .pain-text { color: var(--ink-700); font-size: 15.5px; }
+  .pain-quote {
+    margin-top: 32px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--red-500);
+    background: linear-gradient(95deg, rgba(213,97,61,0.10), rgba(213,97,61,0.0) 80%);
+    border-radius: 4px 16px 16px 4px;
+  }
+  .pain-quote .label { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-700); }
+  .pain-quote .text { margin-top: 10px; font-family: "Noto Serif Thai", serif; font-size: 22px; line-height: 1.4; color: var(--ink-900); }
+  .pain-quote .text em { font-family: "Instrument Serif", serif; font-style: italic; color: var(--red-600); }
+
+  /* ============ BEFORE/AFTER ============ */
+  .ba-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: stretch; }
+  @media (max-width: 880px) { .ba-grid { grid-template-columns: 1fr; } .ba-arrow { display: none; } }
+  .ba-card { padding: 36px 32px; border-radius: 24px; }
+  .ba-before {
+    background: linear-gradient(160deg, rgba(255,255,255,0.55), rgba(238,224,200,0.45));
+    border: 1px solid rgba(122, 33, 20, 0.10);
+  }
+  .ba-after {
+    background: linear-gradient(160deg, rgba(255,247,236,0.85), rgba(252,229,210,0.65));
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: var(--glass-shadow);
+  }
+  .ba-card h3 { font-size: 24px; margin-bottom: 6px; }
+  .ba-tag { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-500); }
+  .ba-after .ba-tag { color: var(--red-600); }
+  .ba-list { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+  .ba-list li { list-style: none; display:flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--ink-700); }
+  .ba-list li .icon {
+    flex: none; width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+    font-size: 12px; font-weight: 700;
+  }
+  .ba-before .icon { background: rgba(122,33,20,0.10); color: var(--red-700); }
+  .ba-after .icon { background: linear-gradient(135deg, #F2B731, #C5421C); color: white; }
+  .ba-arrow {
+    align-self: center;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D5613D, #7A2114);
+    color: white; font-size: 28px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 24px 48px -16px rgba(168,50,26,0.5);
+  }
+
+  /* ============ POSITIONING ============ */
+  .pos { background: linear-gradient(180deg, var(--cream-1) 0%, var(--cream-2) 100%); }
+  .pos-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+  @media (max-width:880px){ .pos-grid { grid-template-columns: 1fr; } }
+  .pos h2 .ital { color: var(--red-600); }
+  .pos-questions { display: flex; flex-direction: column; gap: 14px; counter-reset: q; }
+  .pos-q {
+    padding: 18px 22px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    display: flex; gap: 16px; align-items: center;
+    transition: transform .25s, background .25s;
+  }
+  .pos-q:hover { transform: translateY(-2px); background: rgba(255,255,255,0.8); }
+  .pos-q::before {
+    counter-increment: q;
+    content: counter(q, decimal-leading-zero);
+    font-family: "JetBrains Mono", monospace;
+    color: var(--red-500);
+    font-size: 12px;
+    flex: none;
+  }
+
+  /* ============ SOLUTION ============ */
+  .sol { background: var(--cream-1); }
+  .sol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 980px){ .sol-grid { grid-template-columns: 1fr; } }
+  .sol-card {
+    padding: 28px;
+    border-radius: 24px;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--glass-shadow);
+    display: flex; flex-direction: column;
+    min-height: 460px;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .sol-card:hover { transform: translateY(-6px); }
+  .sol-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--red-600);
+  }
+  .sol-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--red-500); }
+  .sol-card h3 { margin-top: 14px; font-size: 24px; line-height: 1.25; }
+  .sol-card > p { color: var(--ink-700); margin-top: 10px; font-size: 15px; line-height: 1.6; }
+  .sol-mock {
+    margin-top: auto;
+    padding-top: 18px;
+  }
+  .mini-mock {
+    margin-top: 14px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.7), rgba(255,247,236,0.55));
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 8px 20px -10px rgba(124,50,26,0.18);
+  }
+  .mini-mock .row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; color: var(--ink-700); }
+  .mini-mock .row:last-child { border-bottom: 0; }
+  .mini-mock .row .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-400); flex: none; }
+  .mini-mock .row .dot.r { background: var(--red-500); }
+  .mini-mock .row .dot.g { background: #2C7A4B; }
+  .mini-mock .meter { margin-left: auto; width: 80px; height: 6px; background: rgba(64,30,18,0.06); border-radius: 999px; position: relative; }
+  .mini-mock .meter i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: linear-gradient(90deg, #F2B731, #C5421C); }
+
+  /* dashboard mock for solution 2 */
+  .sol-dash { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .sol-dash .cell {
+    background: rgba(255,255,255,0.55);
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.8);
+  }
+  .sol-dash .cell .lbl { font-size: 10.5px; color: var(--ink-500); letter-spacing: 0.04em; text-transform: uppercase; }
+  .sol-dash .cell .val { font-family: "Noto Serif Thai", serif; font-size: 18px; color: var(--ink-900); margin-top: 2px; }
+  .sol-dash .cell .pos { color: #2C7A4B; font-size: 11px; font-weight: 600; }
+  .sol-dash .cell .neg { color: var(--red-600); font-size: 11px; font-weight: 600; }
+  .sol-dash .cell.full { grid-column: span 2; }
+  .sol-dash svg { width: 100%; height: 40px; }
+
+  /* workflow mock for solution 3 */
+  .flow { display: flex; flex-direction: column; gap: 10px; }
+  .flow .step {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 12px;
+    font-size: 13px; color: var(--ink-700);
+  }
+  .flow .step .n {
+    width: 22px; height: 22px; border-radius: 6px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #F2B731, #C5421C);
+    color: #fff; font-size: 11px; font-weight: 700;
+  }
+  .flow .step .auto { margin-left: auto; font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--red-600); padding: 2px 8px; background: rgba(213,97,61,0.10); border-radius: 4px; }
+  .flow .conn { width: 1px; height: 10px; margin-left: 25px; background: var(--line); }
+
+  /* ============ USE CASES ============ */
+  .uc { background: linear-gradient(180deg, var(--cream-1), var(--cream-2)); }
+  .uc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 880px){ .uc-grid { grid-template-columns: 1fr; } }
+  .uc-card {
+    padding: 32px;
+    border-radius: 28px;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--glass-shadow);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+    overflow: hidden;
+  }
+  @media (max-width: 600px){ .uc-card { grid-template-columns: 1fr; } }
+  .uc-info h3 { font-size: 22px; }
+  .uc-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #F2B731, #C5421C);
+    color: #fff;
+    margin-bottom: 16px;
+    box-shadow: 0 12px 24px -10px rgba(168,50,26,0.45);
+  }
+  .uc-icon svg { width: 24px; height: 24px; }
+  .uc-info > p { color: var(--ink-700); margin-top: 8px; font-size: 14.5px; line-height: 1.6; }
+  .uc-fits { margin-top: 18px; }
+  .uc-fits .ftitle { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-500); margin-bottom: 8px; }
+  .uc-fits .fpills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .uc-fits .fpills span { padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,0.6); border: 1px solid var(--line-soft); font-size: 12px; color: var(--ink-700); }
+
+  .uc-mock {
+    background: linear-gradient(160deg, rgba(255,247,236,0.6), rgba(252,229,210,0.4));
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.7);
+    position: relative;
+    overflow: hidden;
+    min-height: 240px;
+  }
+
+  /* LINE chat mock */
+  .chat { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+  .chat .b { padding: 10px 12px; border-radius: 14px; max-width: 85%; line-height: 1.45; }
+  .chat .me { align-self: flex-end; background: var(--gold-400); color: var(--ink-900); border-bottom-right-radius: 4px; }
+  .chat .bot { align-self: flex-start; background: rgba(255,255,255,0.85); color: var(--ink-700); border: 1px solid rgba(255,255,255,0.9); border-bottom-left-radius: 4px; box-shadow: 0 4px 12px -6px rgba(124,50,26,0.18); }
+  .chat .typing { font-family: "JetBrains Mono", monospace; font-size: 10.5px; color: var(--red-500); }
+
+  /* doc mock */
+  .doc {
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.9);
+    font-size: 12px;
+    color: var(--ink-700);
+  }
+  .doc .dh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .doc .dh strong { font-size: 13px; color: var(--ink-900); }
+  .doc .dh .tag { font-size: 9.5px; padding: 3px 8px; border-radius: 4px; background: var(--gold-400); color: var(--ink-900); font-weight: 700; letter-spacing: 0.04em; }
+  .doc .dr { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--line-soft); }
+  .doc .dr:last-of-type { border-bottom: 0; }
+  .doc .dt { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1.5px solid var(--ink-900); font-weight: 700; }
+  .doc .dt .num { font-family: "Noto Serif Thai", serif; color: var(--red-600); }
+
+  /* phone mock for owner dashboard */
+  .phone {
+    margin: 0 auto;
+    width: 200px; height: 320px;
+    background: linear-gradient(160deg, #1A1410, #3E332B);
+    border-radius: 28px;
+    padding: 14px 10px;
+    box-shadow: 0 24px 48px -20px rgba(0,0,0,0.4), 0 8px 16px -8px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  .phone::before { content:""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 60px; height: 5px; border-radius: 4px; background: rgba(255,255,255,0.12); }
+  .phone-screen {
+    background: var(--cream-1);
+    border-radius: 18px;
+    height: 100%;
+    padding: 14px 12px 10px;
+    overflow: hidden;
+  }
+  .phs-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .phs-head .t { font-size: 11px; font-weight: 700; }
+  .phs-head .d { font-size: 9px; color: var(--ink-500); }
+  .phs-stat { background: white; border-radius: 12px; padding: 10px; margin-bottom: 6px; box-shadow: 0 4px 8px -4px rgba(0,0,0,0.06); }
+  .phs-stat .l { font-size: 9px; color: var(--ink-500); text-transform: uppercase; letter-spacing: 0.05em; }
+  .phs-stat .v { font-family: "Noto Serif Thai", serif; font-size: 16px; color: var(--ink-900); }
+  .phs-stat .b { font-size: 9px; color: #2C7A4B; font-weight: 600; }
+  .phs-row { display: flex; gap: 6px; margin-top: 6px; }
+  .phs-row .phs-stat { flex: 1; margin-bottom: 0; padding: 8px; }
+  .phs-bar { height: 36px; margin-top: 8px; border-radius: 8px; background: linear-gradient(135deg, #F6CE69, #C5421C); position: relative; overflow: hidden; padding: 6px 8px; color: white; }
+  .phs-bar .l { font-size: 9px; opacity: 0.8; }
+  .phs-bar .v { font-size: 12px; font-weight: 700; }
+
+  /* doc AI mock */
+  .docai { display: flex; gap: 12px; align-items: stretch; height: 100%; }
+  .docai .photo {
+    flex: 1;
+    background: repeating-linear-gradient(135deg, rgba(122,33,20,0.06) 0px, rgba(122,33,20,0.06) 8px, rgba(255,255,255,0.4) 8px, rgba(255,255,255,0.4) 16px);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.7);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .docai .photo .label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--ink-500); transform: rotate(-90deg); }
+  .docai .arrow { align-self: center; font-size: 18px; color: var(--red-500); }
+  .docai .out { flex: 1; background: rgba(255,255,255,0.85); border-radius: 12px; padding: 10px; font-size: 11px; color: var(--ink-700); border: 1px solid rgba(255,255,255,0.9); }
+  .docai .out strong { color: var(--ink-900); }
+  .docai .out .ok { color: #2C7A4B; font-weight: 700; }
+
+  /* ============ SOLOPRENEUR ============ */
+  .solo { background: var(--cream-1); position: relative; overflow: hidden; }
+  .solo::before {
+    content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(245,182,49,0.15), transparent 60%);
+    z-index: 0;
+  }
+  .solo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+  @media (max-width: 880px){ .solo-grid { grid-template-columns: 1fr; } }
+  .solo h2 { font-size: clamp(34px, 4vw, 50px); }
+  .solo h2 .gold {
+    background: linear-gradient(135deg, #F2B731, #B07A12);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-style: italic; font-family: "Instrument Serif", serif; font-weight: 400;
+  }
+  .solo-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .solo-feat {
+    padding: 16px 18px;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(18px);
+    border-radius: 14px;
+    font-size: 14px;
+    color: var(--ink-700);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .solo-feat::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: linear-gradient(135deg, #F2B731, #DBA01D);
+    flex: none;
+  }
+
+  /* ============ WHY ============ */
+  .why { background: var(--cream-2); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 880px){ .why-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px){ .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    padding: 28px;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--glass-shadow);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .why-card:hover { transform: translateY(-4px); }
+  .why-card .num { font-family: "Instrument Serif", serif; font-style: italic; color: var(--red-500); font-size: 28px; }
+  .why-card h4 { margin-top: 8px; font-size: 18px; color: var(--ink-900); font-family: "Noto Serif Thai", serif; font-weight: 600; line-height: 1.3; }
+  .why-card p { margin-top: 6px; color: var(--ink-700); font-size: 14px; }
+
+  /* ============ ABOUT ============ */
+  .about { background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream-1) 100%); }
+  .about-card {
+    padding: 64px;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(22px);
+    border-radius: 32px;
+    box-shadow: var(--glass-shadow);
+  }
+  .about-card h2 .gold { color: var(--gold-500); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+  .about-card p { margin-top: 20px; color: var(--ink-700); font-size: 17px; line-height: 1.75; }
+  .about-pills { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .about-pills span {
+    padding: 8px 16px; border-radius: 999px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--line-soft);
+    font-size: 14px; color: var(--ink-700);
+  }
+  @media (max-width:600px){ .about-card { padding: 40px 24px; } }
+
+  /* ============ CTA ============ */
+  .cta-wrap { padding: 120px 0; }
+  .cta-card {
+    position: relative; overflow: hidden;
+    border-radius: 40px;
+    padding: 80px 56px;
+    background: linear-gradient(135deg, #C5421C 0%, #7A2114 100%);
+    color: #fff;
+    text-align: center;
+  }
+  .cta-card::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(50% 60% at 80% 20%, rgba(245,182,49,0.40), transparent 60%),
+      radial-gradient(60% 60% at 10% 90%, rgba(255,255,255,0.10), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-card > * { position: relative; }
+  .cta-card h2 { color: #fff; font-size: clamp(32px, 4vw, 56px); }
+  .cta-card h2 .gold { color: var(--gold-300); font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+  .cta-card p { margin-top: 18px; color: rgba(255,247,236,0.85); font-size: 17px; }
+  .cta-card .cta-btns { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .cta-card .btn-primary {
+    background: var(--gold-400); color: var(--ink-900);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 12px 30px -10px rgba(0,0,0,0.3);
+  }
+  .cta-card .btn-primary:hover { filter: brightness(1.08); }
+  .cta-card .btn-ghost {
+    background: rgba(255,255,255,0.10); color: #fff; border: 1px solid rgba(255,255,255,0.25);
+  }
+  .cta-card .btn-ghost:hover { background: rgba(255,255,255,0.20); }
+  @media (max-width:600px){ .cta-card { padding: 56px 28px; border-radius: 28px; } }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 48px 0 40px;
+    background: var(--cream-1);
+    border-top: 1px solid var(--line-soft);
+  }
+  .ft-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
+  @media (max-width:880px){ .ft-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width:520px){ .ft-grid { grid-template-columns: 1fr; } }
+  .ft-brand p { margin-top: 14px; color: var(--ink-500); font-size: 14px; max-width: 280px; }
+  .ft-col h5 { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-500); margin: 0 0 16px; font-weight: 500; }
+  .ft-col a, .ft-col span { display: block; color: var(--ink-700); font-size: 14px; padding: 4px 0; text-decoration: none; }
+  .ft-col a:hover { color: var(--red-600); }
+  .ft-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .ft-bottom .copy { font-size: 13px; color: var(--ink-500); }
+  .ft-bottom .tag { font-size: 13px; color: var(--ink-500); }
+  .ft-bottom .tag em { color: var(--red-600); font-style: italic; font-family: "Instrument Serif", serif; }
+
+  /* utility */
+  .check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: linear-gradient(135deg, #F2B731, #C5421C);
+    color: #fff; font-size: 12px; font-weight: 700; flex: none;
+  }
+  .x {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(122,33,20,0.10); color: var(--red-700); font-size: 12px; font-weight: 700; flex: none;
+  }
+
+  /* fade-in on scroll */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="assets/flowlanding-logo.png" alt="FlowLanding" />
+      <span>FlowLanding</span>
+    </div>
+    <div class="nav-links">
+      <a href="#solution">Solutions</a>
+      <a href="#use-cases">Use cases</a>
+      <a href="#why">Why us</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="btn btn-primary" href="#cta">วิเคราะห์ฟรี
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<div class="canvas">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">AI · Automation · Operational Intelligence</span>
+        <h1 style="margin-top:24px;">
+          ธุรกิจของคุณ <span class="accent">"กำลังโต"</span><br/>
+          หรือแค่ <span class="accent">"กำลังเหนื่อยขึ้น"</span>?
+        </h1>
+        <p class="hero-sub">
+          FlowLanding ช่วยเจ้าของธุรกิจแก้ปัญหาเรื่องงาน ระบบ และการจัดการ
+          ด้วย AI และ Automation ที่ออกแบบจาก<em class="ital">มุมมองของนักธุรกิจ</em> —
+          ไม่ใช่บริษัทรับเขียนโปรแกรม และไม่สร้างระบบที่ซับซ้อนเกินจำเป็น
+        </p>
+
+        <div class="hero-bullets">
+          <span>ลดต้นทุน</span>
+          <span>ลดงานซ้ำ</span>
+          <span>เพิ่มความเร็ว</span>
+          <span>เพิ่มกำไร</span>
+          <span>ควบคุมธุรกิจได้อีกครั้ง</span>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#cta">
+            วิเคราะห์ธุรกิจฟรี 30 นาที
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#use-cases">ดูตัวอย่างระบบ</a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="avatars"><span></span><span></span><span></span><span></span></div>
+          <div>เจ้าของธุรกิจ SME, ผู้รับเหมา, ฟรีแลนซ์ ใช้งานจริงผ่าน LINE</div>
+        </div>
+      </div>
+
+      <!-- floating glass dashboard cluster -->
+      <div class="cluster">
+        <!-- main dashboard -->
+        <div class="card glass h-main float">
+          <div class="head">
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-500);letter-spacing:0.14em;text-transform:uppercase;">Owner Dashboard</div>
+              <div class="title" style="margin-top:4px;">รายงานธุรกิจ — วันนี้</div>
+            </div>
+            <div class="pill">● Live</div>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="label">รายรับ</div>
+              <div class="value">฿284,500</div>
+              <div class="delta pos">↑ 12.4%</div>
+            </div>
+            <div class="stat">
+              <div class="label">กำไร</div>
+              <div class="value">฿94,210</div>
+              <div class="delta pos">↑ 8.1%</div>
+            </div>
+            <div class="stat">
+              <div class="label">งานค้าง</div>
+              <div class="value">7</div>
+              <div class="delta">−2 จากเมื่อวาน</div>
+            </div>
+          </div>
+          <div class="chart">
+            <svg viewBox="0 0 300 110" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D5613D" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#D5613D" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#F2B731"/>
+                  <stop offset="100%" stop-color="#C5421C"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,80 C30,70 50,60 80,55 C110,50 130,72 160,60 C190,48 210,30 240,28 C265,26 285,20 300,18 L300,110 L0,110 Z" fill="url(#g1)"/>
+              <path d="M0,80 C30,70 50,60 80,55 C110,50 130,72 160,60 C190,48 210,30 240,28 C265,26 285,20 300,18" fill="none" stroke="url(#g2)" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="240" cy="28" r="4" fill="#C5421C"/>
+              <circle cx="240" cy="28" r="9" fill="none" stroke="#C5421C" stroke-opacity="0.25" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- LINE notif card -->
+        <div class="card glass h-line float b">
+          <div class="line-row">
+            <div class="line-av">L</div>
+            <div style="flex:1;">
+              <div class="line-name">LINE OA · @flowlanding</div>
+              <div class="line-meta">2 นาทีที่แล้ว · auto-reply</div>
+              <div class="line-msg" style="background:rgba(122,33,20,0.05);padding:8px 10px;border-radius:10px;border-top-right-radius:4px;margin-top:8px;">
+                สวัสดีครับ สนใจสินค้า อยากทราบราคา
+              </div>
+              <div class="line-bot">
+                <strong>FlowBot ตอบให้แล้ว →</strong> ส่งใบเสนอราคา + แคตตาล็อก พร้อมแจ้งทีมขายติดตาม
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- invoice doc -->
+        <div class="card glass h-invoice float c">
+          <div class="doc-head">
+            <strong style="font-size:13px;">Quotation</strong>
+            <span class="tag">PAID</span>
+          </div>
+          <div class="doc-no">QT-2026-00138</div>
+          <div style="margin-top:10px;">
+            <div class="doc-line"><span>บริการ Automation</span><span>฿45,000</span></div>
+            <div class="doc-line"><span>Setup Dashboard</span><span>฿18,000</span></div>
+            <div class="doc-line"><span>VAT 7%</span><span>฿4,410</span></div>
+          </div>
+          <div class="doc-total"><span>รวม</span><span class="num">฿67,410</span></div>
+        </div>
+
+        <!-- metric card -->
+        <div class="card glass h-metric float d">
+          <div class="ml">เวลาที่ประหยัดได้/สัปดาห์</div>
+          <div class="mv">18.5 ชม.</div>
+          <div class="mb">
+            <i style="height: 30%"></i><i style="height: 50%"></i><i style="height: 40%"></i><i style="height: 70%"></i><i style="height: 60%"></i><i style="height: 90%"></i><i style="height: 100%"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust">
+  <div class="wrap">
+    <div class="glass trust-card">
+      <span class="trust-label">ธุรกิจที่เหมาะกับเรา</span>
+      <div class="trust-pills">
+        <span>SME &amp; ธุรกิจครอบครัว</span>
+        <span>ก่อสร้าง / อสังหา</span>
+        <span>ร้านค้า · บริการ</span>
+        <span>ผู้ประกอบการออนไลน์</span>
+        <span>Freelance &amp; Solopreneur</span>
+        <span>ธุรกิจที่ใช้ LINE เป็นหลัก</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ PAIN ============ -->
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="pain-grid">
+      <div class="reveal">
+        <span class="eyebrow">The real bottleneck</span>
+        <h2 style="margin-top:22px;">เจ้าของธุรกิจส่วนใหญ่<br/>ไม่ได้มีปัญหาเรื่อง <span class="ital" style="color:var(--red-600)">ยอดขาย</span></h2>
+        <p style="margin-top:18px;color:var(--ink-700);font-size:17px;line-height:1.7;">
+          สิ่งที่ทำให้รู้สึกเหนื่อยทุกวัน ไม่ใช่ลูกค้าที่ไม่พอ —
+          แต่เป็น <strong>กระบวนการภายใน</strong> ที่ยังพึ่ง "แรงเจ้าของ" มากเกินไป
+        </p>
+        <div class="pain-quote">
+          <div class="label">สิ่งที่น่ากลัวที่สุด</div>
+          <div class="text">
+            ธุรกิจเริ่ม <em>"โตด้วยแรงของเจ้าของ"</em><br/>
+            แทนที่จะ <em>"โตด้วยระบบ"</em>
+          </div>
+        </div>
+      </div>
+      <div class="pain-list reveal">
+        <div class="pain-item"><div class="pain-num">01</div><div class="pain-text">ทุกอย่างต้องผ่านตัวเอง</div></div>
+        <div class="pain-item"><div class="pain-num">02</div><div class="pain-text">ทีมทำงาน แต่ยังต้องคอยตาม</div></div>
+        <div class="pain-item"><div class="pain-num">03</div><div class="pain-text">ลูกค้าทักมา แต่ตอบไม่ทัน</div></div>
+        <div class="pain-item"><div class="pain-num">04</div><div class="pain-text">ข้อมูลอยู่หลายระบบ ไม่มีอะไรเชื่อมกัน</div></div>
+        <div class="pain-item"><div class="pain-num">05</div><div class="pain-text">ใช้ Excel หลายไฟล์จนเริ่มควบคุมไม่ไหว</div></div>
+        <div class="pain-item"><div class="pain-num">06</div><div class="pain-text">ไม่รู้กำไรจริงจนกว่าจะสิ้นเดือน</div></div>
+        <div class="pain-item"><div class="pain-num">07</div><div class="pain-text">อยากโต แต่ยิ่งโตก็ยิ่งเหนื่อย</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="canvas" id="ba">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Before · After</span>
+      <h2 style="margin-top:22px;">จาก <span class="ital" style="color:var(--red-600)">"ทำเอง"</span> ไปสู่ <span class="ital" style="color:var(--gold-500)">"มีระบบ"</span></h2>
+      <p>การเปลี่ยนแปลงที่เจ้าของธุรกิจรู้สึกได้ภายใน 30–60 วัน หลังเริ่มวางระบบ</p>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-card ba-before reveal">
+        <div class="ba-tag">— BEFORE / ก่อนมีระบบ</div>
+        <h3 style="margin-top:6px;">ทุกอย่างยังหนักอยู่ที่ owner</h3>
+        <ul class="ba-list">
+          <li><span class="x">×</span><span>งานทุกอย่างต้องผ่าน owner</span></li>
+          <li><span class="x">×</span><span>พนักงานถามตลอด</span></li>
+          <li><span class="x">×</span><span>ลูกค้าตอบไม่ทัน</span></li>
+          <li><span class="x">×</span><span>เอกสารกระจัดกระจาย</span></li>
+          <li><span class="x">×</span><span>ไม่รู้เงินเข้าออกจริง</span></li>
+          <li><span class="x">×</span><span>ใช้หลายโปรแกรมแต่ไม่เชื่อมกัน</span></li>
+        </ul>
+      </div>
+
+      <div class="ba-arrow">→</div>
+
+      <div class="ba-card ba-after reveal">
+        <div class="ba-tag">— AFTER / หลังมีระบบ</div>
+        <h3 style="margin-top:6px;">งาน flow ได้ — owner ได้สมาธิคืน</h3>
+        <ul class="ba-list">
+          <li><span class="check">✓</span><span>ระบบช่วยตอบลูกค้าอัตโนมัติ</span></li>
+          <li><span class="check">✓</span><span>ข้อมูลรวมอยู่ในที่เดียว</span></li>
+          <li><span class="check">✓</span><span>งาน flow ได้โดยไม่ต้องตามเอง</span></li>
+          <li><span class="check">✓</span><span>Owner เห็นตัวเลขแบบ Real-time</span></li>
+          <li><span class="check">✓</span><span>ลดงาน manual และ human error</span></li>
+          <li><span class="check">✓</span><span>ทีมทำงานได้เร็วขึ้นโดยไม่ต้องเพิ่มคน</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POSITIONING ============ -->
+<section class="pos" id="positioning">
+  <div class="wrap">
+    <div class="pos-grid">
+      <div class="reveal">
+        <span class="eyebrow">Our positioning</span>
+        <h2 style="margin-top:22px;">เราไม่ใช่ <span class="ital">Programming House</span></h2>
+        <p style="margin-top:20px;color:var(--ink-700);font-size:16.5px;line-height:1.75;">
+          และเราไม่เชื่อว่าทุกธุรกิจจำเป็นต้องมีระบบที่ซับซ้อน
+        </p>
+        <p style="margin-top:18px;color:var(--ink-700);font-size:16.5px;line-height:1.75;">
+          FlowLanding คือ<strong>ทีมที่ปรึกษาธุรกิจ</strong>ที่ใช้ AI และ Automation
+          เป็น "เครื่องมือ" เพื่อแก้ปัญหาให้เจ้าของธุรกิจจริง ๆ —
+          เราจะออกแบบระบบที่<strong>เหมาะกับธุรกิจคุณจริง ๆ</strong>
+          ไม่ใช่ขาย software สำเร็จรูปให้ทุกคนเหมือนกันหมด
+        </p>
+      </div>
+
+      <div class="reveal">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-500);margin-bottom:20px;">เราเริ่มจากคำถามว่า</div>
+        <div class="pos-questions">
+          <div class="pos-q">ธุรกิจของคุณติดตรงไหน?</div>
+          <div class="pos-q">งานอะไรเสียเวลามากที่สุด?</div>
+          <div class="pos-q">อะไรที่ owner ยังต้องทำเองทุกวัน?</div>
+          <div class="pos-q">ขั้นตอนไหนควรถูก automate?</div>
+          <div class="pos-q">ข้อมูลอะไรที่ควรเห็นแบบ Real-time?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section class="sol" id="solution">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our solutions</span>
+      <h2 style="margin-top:22px;">เราช่วยธุรกิจของคุณ <span class="ital" style="color:var(--red-600)">อย่างไร</span>?</h2>
+      <p>สามแนวทางหลักที่เราใช้ออกแบบระบบให้กับ SME — ลดงาน manual, เห็นภาพธุรกิจ real-time, และวางระบบให้โตได้โดยไม่ต้องเพิ่มคน</p>
+    </div>
+
+    <div class="sol-grid">
+      <!-- 1: Automation -->
+      <div class="sol-card reveal">
+        <div class="sol-tag">01 / Automation</div>
+        <h3>ลดงาน Manual<br/>ด้วย Automation</h3>
+        <p>ลดงานซ้ำ ๆ ที่เสียเวลาทุกวัน — เพื่อให้ทีมทำงานได้เร็วขึ้น และ owner ไม่ต้องคอยจัดการทุกเรื่องด้วยตัวเอง</p>
+        <div class="sol-mock">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500);">งานที่ระบบช่วยทำแทน</div>
+          <div class="mini-mock">
+            <div class="row"><span class="dot g"></span>ตอบลูกค้า<span class="meter"><i style="width:92%"></i></span></div>
+            <div class="row"><span class="dot g"></span>กรอกข้อมูล<span class="meter"><i style="width:88%"></i></span></div>
+            <div class="row"><span class="dot"></span>ออกเอกสาร<span class="meter"><i style="width:75%"></i></span></div>
+            <div class="row"><span class="dot"></span>ติดตามงาน<span class="meter"><i style="width:64%"></i></span></div>
+            <div class="row"><span class="dot r"></span>แจ้งเตือน<span class="meter"><i style="width:96%"></i></span></div>
+            <div class="row"><span class="dot r"></span>จัดการ Lead<span class="meter"><i style="width:70%"></i></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Real-time view -->
+      <div class="sol-card reveal">
+        <div class="sol-tag">02 / Visibility</div>
+        <h3>ทำให้เจ้าของเห็น<br/>ภาพธุรกิจแบบ Real-time</h3>
+        <p>ไม่ต้องรอสิ้นเดือน ไม่ต้องถามหลายคน ไม่ต้องเปิดหลายโปรแกรม — ทุกอย่างถูกรวมไว้ใน Dashboard ที่เข้าใจง่าย</p>
+        <div class="sol-mock">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500);">Owner Dashboard · live</div>
+          <div class="mini-mock sol-dash" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div class="cell"><div class="lbl">รายรับ</div><div class="val">฿284K</div><div class="pos">↑ 12.4%</div></div>
+            <div class="cell"><div class="lbl">กำไร</div><div class="val">฿94K</div><div class="pos">↑ 8.1%</div></div>
+            <div class="cell"><div class="lbl">Cashflow</div><div class="val">฿+62K</div><div class="pos">healthy</div></div>
+            <div class="cell"><div class="lbl">งานค้าง</div><div class="val">7</div><div class="neg">↓ −2</div></div>
+            <div class="cell full">
+              <div class="lbl">Lead 30 วัน</div>
+              <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="dg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#F2B731"/><stop offset="100%" stop-color="#C5421C"/></linearGradient>
+                </defs>
+                <path d="M0,30 L20,28 L40,22 L60,26 L80,18 L100,20 L120,12 L140,16 L160,8 L180,14 L200,6" fill="none" stroke="url(#dg)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: System for growth -->
+      <div class="sol-card reveal">
+        <div class="sol-tag">03 / Scale</div>
+        <h3>วางระบบให้ธุรกิจ<br/>โตโดยไม่ต้องเพิ่มคน</h3>
+        <p>ออกแบบ workflow ให้ทีมทำงานได้มีประสิทธิภาพมากขึ้น — เจ้าของไม่ต้องตามทุกงาน ไม่ต้องตอบทุกเรื่อง ไม่ต้องแก้ปัญหาเดิมซ้ำ ๆ ทุกวัน</p>
+        <div class="sol-mock">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-500);">Sample workflow</div>
+          <div class="mini-mock">
+            <div class="flow">
+              <div class="step"><span class="n">1</span>ลูกค้าส่งคำสั่งซื้อใน LINE<span class="auto">auto</span></div>
+              <div class="conn"></div>
+              <div class="step"><span class="n">2</span>ระบบสร้าง invoice + แจ้งทีม<span class="auto">auto</span></div>
+              <div class="conn"></div>
+              <div class="step"><span class="n">3</span>ทีมยืนยัน → ส่งของ<span class="auto">manual</span></div>
+              <div class="conn"></div>
+              <div class="step"><span class="n">4</span>อัปเดต Dashboard owner<span class="auto">auto</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USE CASES ============ -->
+<section class="uc" id="use-cases">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Use cases</span>
+      <h2 style="margin-top:22px;">ตัวอย่างระบบ<br/>ที่เรา <span class="ital" style="color:var(--red-600)">สร้างให้ลูกค้า</span></h2>
+      <p>ระบบจริงที่ใช้งานอยู่ในธุรกิจ SME ทุกวันนี้ — เริ่มจากปัญหาเล็ก ๆ ในชีวิตประจำวัน</p>
+    </div>
+
+    <div class="uc-grid">
+      <!-- 1: LINE invoice -->
+      <div class="uc-card reveal">
+        <div class="uc-info">
+          <div class="uc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+          </div>
+          <h3>ระบบออกเอกสารผ่าน LINE</h3>
+          <p>พิมพ์ข้อความสั้น ๆ ใน LINE → ระบบสร้าง<br/>ใบเสนอราคา / invoice / receipt อัตโนมัติ</p>
+          <div class="uc-fits">
+            <div class="ftitle">เหมาะสำหรับ</div>
+            <div class="fpills">
+              <span>ฟรีแลนซ์</span><span>ร้านค้า</span><span>ผู้รับเหมา</span><span>SME</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-mock">
+          <div class="chat">
+            <div class="b me">ออก invoice 45,000 ให้บริษัท ABC ค่า service เดือนนี้</div>
+            <div class="typing">FlowBot กำลังพิมพ์…</div>
+          </div>
+          <div class="doc" style="margin-top:12px;">
+            <div class="dh"><strong>INV-2026-0142</strong><span class="tag">READY</span></div>
+            <div class="dr"><span>ABC Co., Ltd.</span><span>10 Nov 2026</span></div>
+            <div class="dr"><span>Service · Nov</span><span>฿42,056</span></div>
+            <div class="dr"><span>VAT 7%</span><span>฿2,944</span></div>
+            <div class="dt"><span>Total</span><span class="num">฿45,000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: LINE Customer Automation -->
+      <div class="uc-card reveal">
+        <div class="uc-info">
+          <div class="uc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>LINE Customer Automation</h3>
+          <p>ลูกค้าทักเข้ามา → ระบบตอบอัตโนมัติ → คัดกรอง lead → ส่งต่อทีมขาย — ลดเวลาตอบและไม่เสียโอกาส</p>
+          <div class="uc-fits">
+            <div class="ftitle">ลดเวลาตอบจาก</div>
+            <div class="fpills">
+              <span>~ 4 ชม.</span><span style="background:linear-gradient(135deg,#F2B731,#C5421C);color:#fff;border:none;">→ 30 วินาที</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-mock">
+          <div class="chat">
+            <div class="b bot">สวัสดีครับ ติดต่อสอบถามได้เลยครับ ✨</div>
+            <div class="b me">สนใจแพ็กเกจที่ลงเฟส อยากดู</div>
+            <div class="b bot">ส่งแคตตาล็อกให้แล้วนะครับ พร้อมราคาเริ่มต้น<br/>ทีมเซลส์จะติดต่อภายใน 10 นาที</div>
+            <div class="typing">→ ส่งต่อทีมขาย · lead score 86</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Owner Dashboard -->
+      <div class="uc-card reveal">
+        <div class="uc-info">
+          <div class="uc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+          </div>
+          <h3>Owner Dashboard</h3>
+          <p>เปิดมือถือ → เห็นภาพธุรกิจทันที<br/>ไม่ต้องเปิด Excel หลายไฟล์ ไม่ต้องถามหลายคน</p>
+          <div class="uc-fits">
+            <div class="ftitle">เห็นทันทีในมือถือ</div>
+            <div class="fpills">
+              <span>รายรับ</span><span>กำไร</span><span>cashflow</span><span>งานค้าง</span><span>stock</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-mock" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg, rgba(213,97,61,0.12), rgba(245,182,49,0.10));">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phs-head"><div class="t">วันนี้</div><div class="d">10 พ.ย.</div></div>
+              <div class="phs-stat">
+                <div class="l">รายรับวันนี้</div>
+                <div class="v">฿84,200</div>
+                <div class="b">↑ 12% vs เมื่อวาน</div>
+              </div>
+              <div class="phs-row">
+                <div class="phs-stat"><div class="l">กำไร</div><div class="v">฿28K</div></div>
+                <div class="phs-stat"><div class="l">งานค้าง</div><div class="v">7</div></div>
+              </div>
+              <div class="phs-bar">
+                <div class="l">Cashflow เดือนนี้</div>
+                <div class="v">+ ฿62,400</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: AI Doc Processing -->
+      <div class="uc-card reveal">
+        <div class="uc-info">
+          <div class="uc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12h2M3 12h2M12 3v2M12 19v2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg>
+          </div>
+          <h3>AI Document Processing</h3>
+          <p>ถ่ายรูปบิล → AI อ่านข้อมูล → บันทึกอัตโนมัติ — ลดงาน admin และความผิดพลาดจากการคีย์มือ</p>
+          <div class="uc-fits">
+            <div class="ftitle">ความแม่นยำ</div>
+            <div class="fpills">
+              <span>OCR + AI</span><span style="background:linear-gradient(135deg,#F2B731,#C5421C);color:#fff;border:none;">98.4% accuracy</span>
+            </div>
+          </div>
+        </div>
+        <div class="uc-mock">
+          <div class="docai" style="height:100%;">
+            <div class="photo"><span class="label">ภาพถ่ายบิล</span></div>
+            <div class="arrow">→</div>
+            <div class="out">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--ink-500);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;">EXTRACTED</div>
+              <div style="margin-bottom:6px;"><strong>ABC Supply</strong></div>
+              <div>Date: 09 Nov 2026</div>
+              <div>Items: 14</div>
+              <div>Subtotal: ฿18,420</div>
+              <div>VAT: ฿1,289</div>
+              <div style="margin-top:6px;"><strong>Total: ฿19,709</strong></div>
+              <div class="ok" style="margin-top:8px;">✓ บันทึกแล้ว</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLOPRENEUR ============ -->
+<section class="solo">
+  <div class="wrap">
+    <div class="solo-grid">
+      <div class="reveal">
+        <span class="eyebrow">For solopreneurs</span>
+        <h2 style="margin-top:22px;">ยิ่งธุรกิจเล็ก<br/><span class="gold">ยิ่งต้องใช้เทคโนโลยี</span></h2>
+        <p style="margin-top:22px;color:var(--ink-700);font-size:17px;line-height:1.75;">
+          เมื่อก่อน AI อาจเป็นเรื่องของบริษัทใหญ่ — แต่วันนี้
+          เจ้าของธุรกิจเล็ก ฟรีแลนซ์ และ Solopreneur สามารถใช้ AI
+          เพื่อทำงานแทนคนได้แล้ว <strong>โดยไม่ต้องมีทีม IT</strong>
+        </p>
+      </div>
+      <div class="reveal">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-500);margin-bottom:14px;">เช่น</div>
+        <div class="solo-features">
+          <div class="solo-feat">ตอบลูกค้าอัตโนมัติ</div>
+          <div class="solo-feat">ออกเอกสารผ่าน LINE</div>
+          <div class="solo-feat">จัดการ lead</div>
+          <div class="solo-feat">ติดตามงาน</div>
+          <div class="solo-feat">สรุปรายรับรายจ่าย</div>
+          <div class="solo-feat">แจ้งเตือนธุรกิจ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why FlowLanding</span>
+      <h2 style="margin-top:22px;">สิ่งที่ทำให้เรา <span class="ital" style="color:var(--red-600)">แตกต่าง</span></h2>
+      <p>เราเริ่มจากปัญหาธุรกิจ ไม่ใช่จากเทคโนโลยี — และนั่นคือสิ่งที่ทำให้ระบบของเรา <em class="ital">ใช้ได้จริง</em></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="num">01</div><h4>เริ่มจาก "ธุรกิจ"<br/>ไม่ใช่ "เทคโนโลยี"</h4><p>ทุกระบบเริ่มจากการเข้าใจ workflow และ pain point ของคุณ</p></div>
+      <div class="why-card reveal"><div class="num">02</div><h4>เข้าใจ pain point<br/>ของ SME จริง</h4><p>ทีมเรามีพื้นฐานการทำธุรกิจมาก่อนที่จะมาทำเทคโนโลยี</p></div>
+      <div class="why-card reveal"><div class="num">03</div><h4>ออกแบบระบบ<br/>ให้ใช้ได้จริง</h4><p>ไม่ over-engineer ไม่ใส่ feature ที่ไม่จำเป็น</p></div>
+      <div class="why-card reveal"><div class="num">04</div><h4>ไม่บังคับให้ทีม<br/>เรียน software ใหม่</h4><p>ใช้เครื่องมือที่ทีมคุณคุ้นเคยอยู่แล้ว — ลด friction</p></div>
+      <div class="why-card reveal"><div class="num">05</div><h4>ใช้ LINE เป็นหลัก<br/>เพราะคนไทยใช้อยู่แล้ว</h4><p>ระบบทำงานในที่ที่ลูกค้าและทีมคุณอยู่ — ไม่ต้องสลับ app</p></div>
+      <div class="why-card reveal"><div class="num">06</div><h4>เน้นผลลัพธ์<br/>ไม่ใช่ feature</h4><p>วัดความสำเร็จที่ ROI และเวลาที่เจ้าของได้คืน</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-card reveal">
+      <span class="eyebrow">About FlowLanding</span>
+      <h2 style="margin-top:24px;">FlowLanding คือทีมที่ช่วยเจ้าของธุรกิจ<br/>เปลี่ยนจาก <span class="ital" style="color:var(--red-600)">"ทำทุกอย่างเอง"</span><br/>ไปสู่ <span class="gold">"มีระบบที่ช่วยทำงานแทน"</span></h2>
+      <p>
+        เราเชื่อว่าเจ้าของธุรกิจไม่ควรเสียเวลาไปกับงานซ้ำ ๆ ทุกวัน
+        แต่ควรมีเวลาวางแผน ตัดสินใจ ขยายธุรกิจ และใช้ชีวิตได้อย่างอิสระมากขึ้น
+      </p>
+      <div class="about-pills">
+        <span>วางแผน</span>
+        <span>ตัดสินใจ</span>
+        <span>ขยายธุรกิจ</span>
+        <span>ใช้ชีวิตได้อิสระ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-wrap" id="cta">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.20);color:var(--gold-300);">Ready to start</span>
+      <h2 style="margin-top:24px;">ถึงเวลาเปลี่ยนธุรกิจ<br/>จาก <span class="gold">"ใช้แรงเจ้าของ"</span><br/>ให้กลายเป็น <span class="gold">"ธุรกิจที่มีระบบ"</span></h2>
+      <p>เริ่มต้นด้วยการวิเคราะห์ธุรกิจฟรี — เราจะช่วยมองหา bottleneck และเสนอแนวทางที่เหมาะกับคุณ</p>
+      <div class="cta-btns">
+        <a class="btn btn-primary" href="https://line.me/R/ti/p/@flowlanding">
+          วิเคราะห์ธุรกิจฟรี 30 นาที
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="mailto:flowlanding.info@gmail.com">ส่งอีเมลหาเรา</a>
+      </div>
+      <div style="margin-top:32px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,247,236,0.7);letter-spacing:0.08em;">
+        <span>📧 flowlanding.info@gmail.com</span>
+        <span>
+</span>
+        <span>💬 LINE OA: @flowlanding</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="brand"><img src="assets/flowlanding-logo.png" alt="" /><span>FlowLanding</span></div>
+        <p>AI Business Systems for SME Owners — ลดงาน · เพิ่มกำไร · ควบคุมธุรกิจได้มากขึ้น</p>
+      </div>
+      <div class="ft-col">
+        <h5>Solutions</h5>
+        <a href="#solution">Automation</a>
+        <a href="#solution">Owner Dashboard</a>
+        <a href="#solution">Workflow Design</a>
+        <a href="#use-cases">AI Doc Processing</a>
+      </div>
+      <div class="ft-col">
+        <h5>Company</h5>
+        <a href="#about">About</a>
+        <a href="#why">Why us</a>
+        <a href="#use-cases">Case studies</a>
+        <a href="#cta">Free analysis</a>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a>
+        <a href="tel:0836466594">083-646-6594</a>
+        <a href="https://line.me/R/ti/p/@flowlanding">LINE: @flowlanding</a>
+        <span>flowlanding.co</span>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="copy">© 2026 FlowLanding · All rights reserved</div>
+      <div class="tag">Built for SME owners <em>who deserve their time back</em></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // soft parallax for hero cluster on mouse
+  const cluster = document.querySelector('.cluster');
+  if (cluster) {
+    const cards = cluster.querySelectorAll('.card');
+    document.addEventListener('mousemove', (e) => {
+      const rect = cluster.getBoundingClientRect();
+      if (e.clientY < rect.top - 200 || e.clientY > rect.bottom + 200) return;
+      const x = (e.clientX / window.innerWidth - 0.5);
+      const y = (e.clientY / window.innerHeight - 0.5);
+      cards.forEach((c, i) => {
+        const depth = (i + 1) * 4;
+        c.style.setProperty('--mx', (x * depth) + 'px');
+        c.style.setProperty('--my', (y * depth) + 'px');
+        c.style.translate = `${x * depth}px ${y * depth}px`;
+      });
+    });
+  }
+</script>
+</body>
 </html>
