@@ -18,252 +18,267 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <script src="/assets/image-slot.js"></script>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F6EEDF"/><rect x="30" y="30" width="40" height="40" rx="10" fill="#C5421C"/><text x="50" y="58" font-family="Georgia,serif" font-size="24" font-weight="700" fill="#F6CE69" text-anchor="middle">F</text></svg></template>
 <style>
   :root{
     --cream-0:#FBF6EE;--cream-1:#F6EEDF;--cream-2:#EFE3CE;--cream-3:#E6D5B8;
-    --red-50:#FBEAE3;--red-200:#EAB29C;--red-400:#D5613D;--red-500:#C5421C;--red-600:#A8321A;--red-700:#7A2114;--red-800:#4F1A12;
+    --red-400:#D5613D;--red-500:#C5421C;--red-600:#A8321A;--red-700:#7A2114;--red-800:#4F1A12;
+    --red-brand:#E11B22;--red-brand-2:#B0141A;
     --gold-300:#F6CE69;--gold-400:#F2B731;--gold-500:#DBA01D;--gold-600:#B07A12;
-    --ink-900:#1A1410;--ink-700:#3E332B;--ink-500:#6F5F52;--ink-400:#8A7868;--ink-300:#B0A293;
+    --ink-950:#120D0A;--ink-900:#1A1410;--ink-800:#241C16;--ink-700:#3E332B;--ink-500:#6F5F52;--ink-400:#8A7868;--ink-300:#B0A293;
     --line:rgba(64,30,18,0.10);--line-soft:rgba(64,30,18,0.05);
-    --glass-bg:linear-gradient(150deg,rgba(255,255,255,0.78),rgba(255,251,243,0.50));
+    --glass-bg:linear-gradient(150deg,rgba(255,255,255,0.80),rgba(255,251,243,0.55));
     --glass-border:1px solid rgba(255,255,255,0.7);
     --glass-shadow:0 1px 0 rgba(255,255,255,0.9) inset,0 0 0 1px rgba(124,50,26,0.04),0 24px 60px -28px rgba(124,50,26,0.30),0 6px 18px -8px rgba(124,50,26,0.14);
-    --grad-red:linear-gradient(135deg,#D5613D 0%,#B0331A 50%,#7A2114 100%);
-    --grad-warm:radial-gradient(60% 70% at 70% 20%,rgba(245,182,49,0.22),transparent 60%),radial-gradient(50% 60% at 10% 90%,rgba(213,97,61,0.18),transparent 60%),radial-gradient(80% 90% at 50% 50%,rgba(255,243,225,1) 0%,rgba(246,238,223,1) 60%,rgba(238,222,196,1) 100%);
-    --radius-lg:28px;--radius-md:18px;--radius-sm:12px;
+    --grad-warm:radial-gradient(60% 70% at 78% 12%,rgba(245,182,49,0.20),transparent 55%),radial-gradient(50% 60% at 8% 88%,rgba(213,97,61,0.14),transparent 60%),linear-gradient(180deg,#FBF3E6 0%,#F6EEDF 55%,#EFE3CE 100%);
+    --radius-lg:26px;--radius-md:18px;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{font-family:"IBM Plex Sans Thai",system-ui,sans-serif;color:var(--ink-900);background:var(--cream-1);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;line-height:1.55}
-  ::selection{background:rgba(213,97,61,0.25)}
-  a{color:var(--red-600);text-decoration:none}
-  a:hover{color:var(--red-500)}
+  ::selection{background:rgba(225,27,34,0.20)}
+  a{color:var(--red-brand);text-decoration:none}
+  a:hover{color:var(--red-600)}
 
-  .canvas{position:relative;background:var(--grad-warm);overflow:hidden}
-  .canvas::before,.canvas::after{content:"";position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.55;z-index:0}
-  .canvas::before{width:720px;height:720px;background:radial-gradient(circle,rgba(245,182,49,0.45),transparent 65%);top:-200px;right:-160px;animation:drift1 28s ease-in-out infinite alternate}
-  .canvas::after{width:640px;height:640px;background:radial-gradient(circle,rgba(213,97,61,0.40),transparent 65%);bottom:-260px;left:-140px;animation:drift2 34s ease-in-out infinite alternate}
-  @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(-60px,80px)}}
-  @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(80px,-60px)}}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 30px;position:relative;z-index:1}
+  @media(max-width:720px){.wrap{padding:0 18px}}
 
-  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
-  @media(max-width:720px){.wrap{padding:0 20px}}
-
-  h1,h2,h3,h4{font-family:"Noto Serif Thai",serif;font-weight:600;letter-spacing:-0.01em;line-height:1.16;color:var(--ink-900);margin:0}
-  h1{font-size:clamp(38px,5vw,66px);letter-spacing:-0.02em}
-  h2{font-size:clamp(28px,3.6vw,46px);letter-spacing:-0.018em}
-  h3{font-size:clamp(20px,2.3vw,27px)}
+  h1,h2,h3,h4{font-family:"Noto Serif Thai",serif;font-weight:600;letter-spacing:-0.01em;line-height:1.18;color:var(--ink-900);margin:0}
+  h1{font-size:clamp(38px,4.8vw,62px);letter-spacing:-0.02em;line-height:1.1}
+  h2{font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.015em}
+  h3{font-size:clamp(18px,2vw,24px)}
   p{margin:0}
   .ital{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-600);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.55);border:1px solid rgba(213,97,61,0.18);backdrop-filter:blur(8px)}
-  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red-500);box-shadow:0 0 0 3px rgba(213,97,61,0.18)}
-  .eyebrow.gold{color:var(--gold-600);border-color:rgba(219,160,29,0.30)}
-  .eyebrow.gold::before{background:var(--gold-500);box-shadow:0 0 0 3px rgba(219,160,29,0.18)}
 
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font:600 15px/1 "IBM Plex Sans Thai",sans-serif;cursor:pointer;border:none;text-decoration:none;transition:transform .25s,box-shadow .25s,filter .25s}
-  .btn-gold{color:var(--ink-900);background:linear-gradient(135deg,#F6CE69,#DBA01D);box-shadow:0 1px 0 rgba(255,255,255,0.5) inset,0 12px 24px -8px rgba(219,160,29,0.5),0 2px 6px rgba(176,122,18,0.2)}
-  .btn-gold:hover{transform:translateY(-1px);filter:brightness(1.05);color:var(--ink-900)}
-  .btn-red{color:#fff;background:var(--grad-red);box-shadow:0 1px 0 rgba(255,255,255,0.25) inset,0 12px 24px -8px rgba(168,50,26,0.45)}
-  .btn-red:hover{transform:translateY(-1px);filter:brightness(1.05);color:#fff}
-  .btn-ghost{color:var(--ink-900);background:rgba(255,255,255,0.55);border:1px solid rgba(64,30,18,0.10);backdrop-filter:blur(10px)}
-  .btn-ghost:hover{background:rgba(255,255,255,0.75);color:var(--ink-900)}
-  .btn .ar{width:17px;height:17px}
-  .linkc{display:inline-flex;align-items:center;gap:7px;font-weight:500;font-size:15px;color:var(--ink-700)}
-  .linkc:hover{color:var(--red-600)}
-  .linkc svg{width:16px;height:16px}
+  /* wavy gold background flourish */
+  .flourish{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .flourish svg{position:absolute;right:-4%;top:6%;width:60%;opacity:.5}
 
-  .glass{background:var(--glass-bg);border-radius:var(--radius-lg);border:var(--glass-border);backdrop-filter:blur(22px) saturate(140%);box-shadow:var(--glass-shadow)}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red-brand);font-weight:500}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--red-brand);border-radius:2px}
+  .eyebrow.center::before{display:none}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border-radius:12px;font:600 15px/1 "IBM Plex Sans Thai",sans-serif;cursor:pointer;border:none;text-decoration:none;transition:transform .22s,box-shadow .22s,filter .22s}
+  .btn-line{color:#fff;background:var(--red-brand);box-shadow:0 10px 22px -10px rgba(225,27,34,0.6)}
+  .btn-line:hover{transform:translateY(-1px);filter:brightness(1.05);color:#fff}
+  .btn-dark{color:#fff;background:var(--ink-900)}
+  .btn-dark:hover{transform:translateY(-1px);background:var(--ink-800);color:#fff}
+  .btn-white{color:var(--ink-900);background:#fff}
+  .btn-white:hover{transform:translateY(-1px);color:var(--ink-900)}
+  .btn-ghost{color:var(--ink-900);background:rgba(255,255,255,0.65);border:1px solid var(--line)}
+  .btn-ghost:hover{background:#fff;color:var(--ink-900)}
+  .btn .ar{width:16px;height:16px}
+  .line-ic{width:20px;height:20px;border-radius:6px;background:#06C755;display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .line-ic svg{width:13px;height:13px;fill:#fff}
 
   /* NAV */
-  nav.top{position:sticky;top:16px;z-index:60;margin:16px auto 0;max-width:1240px;padding:0 32px}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 12px 22px;border-radius:999px;background:linear-gradient(150deg,rgba(255,255,255,0.80),rgba(255,251,243,0.58));border:1px solid rgba(255,255,255,0.7);box-shadow:var(--glass-shadow);backdrop-filter:blur(22px) saturate(140%)}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
-  .brand img{width:28px;height:28px}
-  .nav-links{display:flex;gap:4px;align-items:center}
-  .nav-links a{color:var(--ink-700);font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;transition:background .2s}
-  .nav-links a:hover{background:rgba(255,255,255,0.6);color:var(--ink-900)}
-  @media(max-width:900px){.nav-links{display:none}}
-  nav.top .btn{padding:10px 16px;font-size:13px}
-  @media(max-width:720px){nav.top{padding:0 20px}}
+  nav.top{position:sticky;top:14px;z-index:60;margin:14px auto 0;max-width:1180px;padding:0 30px}
+  .nav-inner{display:flex;align-items:center;gap:20px;padding:11px 12px 11px 20px;border-radius:16px;background:rgba(255,255,255,0.88);border:1px solid rgba(255,255,255,0.9);box-shadow:0 10px 30px -18px rgba(124,50,26,0.3);backdrop-filter:blur(18px)}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:18px;color:var(--ink-900)}
+  .brand img{width:26px;height:26px}
+  .nav-links{display:flex;gap:2px;align-items:center;margin-left:auto}
+  .nav-links a{color:var(--ink-700);font-size:14px;font-weight:500;padding:8px 13px;border-radius:9px;transition:background .2s}
+  .nav-links a:hover{background:rgba(64,30,18,0.05);color:var(--ink-900)}
+  @media(max-width:960px){.nav-links{display:none}}
+  nav.top .btn{padding:10px 16px;font-size:13.5px}
+  @media(max-width:720px){nav.top{padding:0 18px}}
 
-  section{position:relative;padding:110px 0}
-  @media(max-width:720px){section{padding:80px 0}}
-  .section-head{max-width:780px;margin:0 auto 56px;text-align:center}
-  .section-head .eyebrow{margin-bottom:22px}
-  .section-head p{color:var(--ink-700);margin-top:16px;font-size:17px;line-height:1.7}
+  section{position:relative;padding:96px 0}
+  @media(max-width:720px){section{padding:66px 0}}
+  .sec-head{text-align:center;max-width:760px;margin:0 auto 48px}
+  .sec-head h2{margin-top:4px}
+  .sec-head p{color:var(--ink-500);margin-top:14px;font-size:16.5px}
 
   /* HERO */
-  .hero{padding:72px 0 110px}
-  .hero-grid{display:grid;grid-template-columns:52fr 48fr;gap:56px;align-items:center}
+  .hero{background:var(--grad-warm);overflow:hidden;padding:64px 0 88px}
+  .hero-grid{display:grid;grid-template-columns:44fr 56fr;gap:44px;align-items:center}
   @media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:48px}}
-  .hero h1 .accent{background:linear-gradient(135deg,#D5613D,#7A2114);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero-sub{margin-top:26px;font-size:18px;color:var(--ink-700);max-width:520px;line-height:1.75}
-  .price-strip{margin-top:26px;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 20px;border-radius:14px;background:linear-gradient(135deg,rgba(246,206,105,0.30),rgba(219,160,29,0.14));border:1px solid rgba(219,160,29,0.38);font-weight:600;font-size:14.5px;color:var(--ink-900)}
-  .price-strip b{color:var(--red-600)}
-  .price-strip .sep{width:5px;height:5px;border-radius:50%;background:var(--gold-500)}
-  .hero-cta{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-  .hero-micro{margin-top:20px;font-size:13px;color:var(--ink-500)}
+  .hero h1{margin-top:20px}
+  .hero h1 .red{color:var(--red-brand)}
+  .hero-sub{margin-top:22px;font-size:17px;color:var(--ink-500);max-width:460px;line-height:1.75}
+  .price-strip{margin-top:24px;display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;padding:10px 16px;border-radius:10px;background:#fff;border:1px solid rgba(225,27,34,0.18);font-weight:600;font-size:13.5px;color:var(--ink-900);box-shadow:0 8px 20px -14px rgba(124,50,26,0.3)}
+  .price-strip .fire{color:var(--red-brand)}
+  .price-strip b{color:var(--red-brand)}
+  .price-strip .sep{color:var(--ink-300)}
+  .hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-micro{margin-top:18px;font-size:12.5px;color:var(--ink-400)}
 
   /* device composition */
-  .devices{position:relative;width:100%;min-height:520px}
+  .devices{position:relative;width:100%;min-height:440px}
   .float{animation:float 9s ease-in-out infinite;will-change:transform}
   .float.b{animation-duration:11s;animation-delay:-3s}
   .float.c{animation-duration:12.5s;animation-delay:-5s}
-  @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-12px) rotate(calc(var(--r,0deg) + .5deg))}}
+  .float.d{animation-duration:10.5s;animation-delay:-2s}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-10px) rotate(var(--r,0deg))}}
 
-  .browser{background:var(--glass-bg);border:var(--glass-border);border-radius:14px;box-shadow:var(--glass-shadow);overflow:hidden;backdrop-filter:blur(20px)}
-  .browser .bar{display:flex;align-items:center;gap:10px;padding:10px 13px;background:linear-gradient(180deg,rgba(255,255,255,0.65),rgba(255,255,255,0.35));border-bottom:1px solid var(--line-soft)}
-  .browser .dots{display:flex;gap:6px}
-  .browser .dots i{width:10px;height:10px;border-radius:50%;background:rgba(64,30,18,0.14)}
-  .browser .dots i:first-child{background:#E0603F}
-  .browser .dots i:nth-child(2){background:#F2B731}
-  .browser .dots i:nth-child(3){background:#4FB477}
-  .browser .url{flex:1;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-500);background:rgba(255,255,255,0.6);border-radius:7px;padding:5px 12px;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-  .browser .shot{position:relative;background:var(--cream-2);display:block}
-  .browser image-slot{width:100%;height:100%;display:block}
+  .frame{background:#15100d;border-radius:14px;padding:8px;box-shadow:0 30px 60px -28px rgba(30,12,6,0.6),0 8px 20px -10px rgba(30,12,6,0.4)}
+  .frame .glassbar{display:flex;align-items:center;gap:6px;padding:0 4px 7px}
+  .frame .glassbar i{width:8px;height:8px;border-radius:50%;background:#4a3d33}
+  .frame .glassbar i:first-child{background:#E0603F}
+  .frame .glassbar i:nth-child(2){background:#F2B731}
+  .frame .glassbar i:nth-child(3){background:#4FB477}
+  .frame .scr{border-radius:8px;overflow:hidden;background:var(--ink-800);position:relative}
+  .frame .scr image-slot{width:100%;height:100%;display:block}
 
-  .laptop{position:absolute;left:0;top:24px;width:74%;--r:-1.2deg;z-index:2}
-  .laptop .shot{height:244px}
-  .laptop .base{height:12px;background:linear-gradient(180deg,#EDE0C8,#D5C09E);border-radius:0 0 13px 13px;margin:0 6%;box-shadow:0 16px 34px -14px rgba(124,50,26,0.4)}
-  .phone-fr{position:absolute;right:0;bottom:0;width:172px;--r:3deg;padding:7px;background:linear-gradient(160deg,#2A211B,#453931);border-radius:30px;box-shadow:0 30px 60px -24px rgba(0,0,0,0.4);z-index:3}
-  .phone-fr .screen{border-radius:23px;overflow:hidden;background:var(--cream-2);height:330px;position:relative}
-  .phone-fr .screen image-slot{width:100%;height:100%;display:block}
-  .mini-br{position:absolute;left:10%;bottom:-4px;width:220px;--r:2.2deg;z-index:1;opacity:.97}
-  .mini-br .shot{height:130px}
-  @media(max-width:980px){.devices{min-height:440px}.laptop{width:78%}}
-  @media(max-width:560px){.devices{transform:scale(.8);transform-origin:top left;min-height:370px}}
+  .d-laptop{position:absolute;right:0;top:8px;width:74%;--r:0deg;z-index:2}
+  .d-laptop .scr{height:236px}
+  .d-tablet{position:absolute;left:0;top:120px;width:46%;--r:-3deg;z-index:3;border-radius:16px}
+  .d-tablet .scr{height:180px}
+  .d-fruits{position:absolute;right:2%;bottom:0;width:40%;--r:2.5deg;z-index:4;border-radius:16px}
+  .d-fruits .scr{height:160px}
+  .d-phone{position:absolute;left:38%;bottom:-6px;width:118px;--r:4deg;z-index:5;border-radius:22px;padding:6px}
+  .d-phone .scr{height:230px;border-radius:16px}
+  @media(max-width:980px){.devices{min-height:400px}}
+  @media(max-width:560px){.devices{transform:scale(.82);transform-origin:top left;min-height:340px}}
 
-  /* WHY */
+  /* WHY / VS */
   .why{background:var(--cream-1)}
-  .cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:940px;margin:0 auto}
-  @media(max-width:760px){.cmp-grid{grid-template-columns:1fr}}
-  .cmp{padding:32px 30px;border-radius:24px}
-  .cmp.plain{background:linear-gradient(160deg,rgba(255,255,255,0.55),rgba(238,224,200,0.4));border:1px solid var(--line)}
-  .cmp.hi{background:linear-gradient(160deg,rgba(255,247,236,0.9),rgba(252,229,210,0.6));border:1px solid rgba(219,160,29,0.45);box-shadow:var(--glass-shadow)}
-  .cmp h3{font-size:22px}
-  .cmp .tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-500);margin-bottom:8px}
-  .cmp.hi .tag{color:var(--gold-600)}
-  .cmp .sub{font-size:13px;color:var(--ink-500);margin-top:16px;text-transform:uppercase;letter-spacing:.08em;font-family:"JetBrains Mono",monospace}
-  .cmp ul{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:11px}
-  .cmp li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--ink-700)}
-  .cmp li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;margin-top:2px}
-  .cmp.plain li::before{background:rgba(64,30,18,0.10)}
-  .cmp.hi li::before{background:linear-gradient(135deg,#F2B731,#C5421C)}
-  .why-close{max-width:660px;margin:44px auto 0;text-align:center;color:var(--ink-700);font-size:16.5px;line-height:1.85}
-  .why-close strong{color:var(--ink-900)}
-  .why-close .q{font-family:"Noto Serif Thai",serif;font-size:20px;color:var(--ink-900);margin-top:16px;display:block}
-  .why-close .q em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--red-600)}
+  .vs-wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1000px;margin:0 auto;border-radius:24px;overflow:visible}
+  @media(max-width:820px){.vs-wrap{grid-template-columns:1fr;gap:20px}}
+  .vs-card{padding:36px 34px;border-radius:24px}
+  .vs-fb{background:#fff;border:1px solid var(--line);box-shadow:0 20px 50px -30px rgba(124,50,26,0.25);margin-right:14px}
+  .vs-web{background:linear-gradient(150deg,#E11B22,#B0141A);color:#fff;box-shadow:0 26px 60px -28px rgba(176,20,26,0.6);margin-left:14px}
+  @media(max-width:820px){.vs-fb,.vs-web{margin:0}}
+  .vs-card .logos{display:flex;gap:10px;align-items:center;margin-bottom:20px}
+  .vs-card .logos .lg{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -10px rgba(0,0,0,0.3)}
+  .lg.fb{background:#1877F2}.lg.fb svg{width:30px;height:30px;fill:#fff}
+  .lg.line{background:#06C755}.lg.line svg{width:30px;height:30px;fill:#fff}
+  .lg.web{background:#fff;width:60px !important;height:60px !important}.lg.web svg{width:34px;height:34px;stroke:var(--red-brand)}
+  .vs-card h3{font-size:23px}
+  .vs-web h3{color:#fff}
+  .vs-card ul{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:13px}
+  .vs-card li{display:flex;gap:11px;align-items:center;font-size:15.5px}
+  .vs-fb li{color:var(--ink-700)}
+  .vs-web li{color:#fff}
+  .vs-card li .ic{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .vs-fb li .ic{background:rgba(225,27,34,0.10)}.vs-fb li .ic svg{width:12px;height:12px;stroke:var(--red-brand)}
+  .vs-web li .ic{background:var(--gold-400)}.vs-web li .ic svg{width:12px;height:12px;stroke:#7A2114}
+  .vs-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;width:66px;height:66px;border-radius:50%;background:var(--ink-900);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif Thai",serif;font-weight:700;font-size:20px;box-shadow:0 14px 30px -12px rgba(0,0,0,0.5),0 0 0 6px var(--cream-1)}
+  @media(max-width:820px){.vs-badge{position:relative;left:auto;top:auto;transform:none;margin:0 auto}}
 
   /* PORTFOLIO */
   .pf{background:linear-gradient(180deg,var(--cream-1),var(--cream-2))}
-  .pf-item{display:grid;grid-template-columns:1.15fr 0.85fr;gap:52px;align-items:center;margin-bottom:70px}
-  .pf-item:last-of-type{margin-bottom:0}
-  .pf-item.flip .pf-shot{order:2}
-  @media(max-width:860px){.pf-item,.pf-item.flip{grid-template-columns:1fr;gap:28px}.pf-item.flip .pf-shot{order:0}}
-  .pf-shot .browser{transition:transform .4s,box-shadow .4s}
-  .pf-shot:hover .browser{transform:translateY(-6px)}
-  .pf-shot .shot{height:340px}
-  @media(max-width:560px){.pf-shot .shot{height:230px}}
-  .pf-tag{display:inline-flex;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-600);padding:6px 12px;border-radius:999px;background:rgba(213,97,61,0.10);border:1px solid rgba(213,97,61,0.18)}
-  .pf-info h3{margin-top:16px;font-size:28px}
-  .pf-info p{margin-top:12px;color:var(--ink-700);font-size:16px;line-height:1.7;max-width:400px}
-  .pf-info .btn{margin-top:22px}
-  .pf-more{text-align:center;margin-top:64px}
-  .pf-more a{font-family:"IBM Plex Sans Thai";font-weight:600;font-size:16px}
+  .pf-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  @media(max-width:980px){.pf-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:680px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.pf-grid{grid-template-columns:1fr}}
+  .pf-card{display:flex;flex-direction:column;transition:transform .3s}
+  .pf-card:hover{transform:translateY(-5px)}
+  .pf-card .frame{padding:6px}
+  .pf-card .scr{height:150px}
+  .pf-card .url{margin-top:12px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--ink-900);font-weight:500}
+  .pf-card .tag{margin-top:5px;font-size:11.5px;color:var(--red-brand);font-weight:500}
+  .pf-card .desc{margin-top:8px;font-size:12.5px;color:var(--ink-500);line-height:1.55}
+  .pf-more{text-align:center;margin-top:40px}
 
   /* PRICING */
   .pricing{background:var(--cream-1)}
-  .offer-wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
-  .offer{position:relative;overflow:hidden;padding:44px 44px 40px;border-radius:30px;background:linear-gradient(160deg,rgba(255,248,238,0.95),rgba(252,231,213,0.75));border:1.5px solid rgba(219,160,29,0.5);box-shadow:var(--glass-shadow)}
-  .offer::before{content:"";position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(245,182,49,0.28),transparent 65%);pointer-events:none}
-  .offer .pkg{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-600);font-weight:500}
-  .offer .price{font-family:"Noto Serif Thai",serif;font-size:clamp(52px,9vw,76px);font-weight:700;line-height:1;margin-top:14px;color:var(--ink-900)}
-  .offer .price small{font-size:22px;color:var(--ink-500);font-weight:400;margin-left:4px}
-  .offer .desc{margin-top:14px;color:var(--ink-700);font-size:16px;line-height:1.6}
-  .offer .checks{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
-  @media(max-width:520px){.offer{padding:34px 26px}.offer .checks{grid-template-columns:1fr}}
-  .offer .checks div{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink-900)}
-  .offer .checks div::before{content:"";flex:none;width:20px;height:20px;border-radius:6px;margin-top:1px;background:linear-gradient(135deg,#F2B731,#C5421C) center/12px no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M20.3 5.7 9 17l-5.3-5.3 1.4-1.4L9 14.2 18.9 4.3z'/%3E%3C/svg%3E") center/13px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M20.3 5.7 9 17l-5.3-5.3 1.4-1.4L9 14.2 18.9 4.3z'/%3E%3C/svg%3E") center/13px no-repeat;background-color:#C5421C}
-  .offer .pay{margin-top:26px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,0.6);border:1px solid var(--line-soft)}
-  .offer .pay .row{display:flex;justify-content:space-between;align-items:center;font-size:14.5px;color:var(--ink-700);padding:6px 0}
-  .offer .pay .row b{font-family:"Noto Serif Thai",serif;color:var(--ink-900);font-size:18px}
-  .offer .btn{margin-top:26px;width:100%;justify-content:center}
-  .excl{padding:26px 30px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,0.4),rgba(238,224,200,0.3));border:1px solid var(--line-soft)}
-  .excl .h{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-500);margin-bottom:14px}
-  .excl .items{display:flex;flex-wrap:wrap;gap:8px}
-  .excl .items span{font-size:13.5px;color:var(--ink-500);padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.5);border:1px solid var(--line-soft)}
-  .excl .note{margin-top:16px;font-size:14px;color:var(--ink-700);line-height:1.65}
-  .excl .note strong{color:var(--ink-900)}
+  .pr-grid{display:grid;grid-template-columns:0.95fr 1fr 0.95fr;gap:20px;align-items:stretch}
+  @media(max-width:900px){.pr-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+  .pr-card{border-radius:22px;padding:32px 30px}
+  .pr-red{background:linear-gradient(155deg,#E11B22,#A5121A);color:#fff;box-shadow:0 26px 60px -28px rgba(176,20,26,0.6);display:flex;flex-direction:column}
+  .pr-red h3{color:#fff;font-size:22px;line-height:1.3}
+  .pr-red .st{margin-top:20px;font-size:14px;opacity:.85}
+  .pr-red .price{font-family:"Noto Serif Thai",serif;font-weight:700;font-size:64px;line-height:1;margin-top:2px}
+  .pr-red .price small{font-size:26px;vertical-align:top;margin-right:2px}
+  .pr-red .cap{margin-top:14px;font-size:14px;opacity:.9;line-height:1.6}
+  .pr-red .paybox{margin-top:auto;padding-top:22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-top:24px}
+  .pr-red .paybox div{background:rgba(0,0,0,0.16);padding:12px 10px;text-align:center}
+  .pr-red .paybox .l{font-size:10.5px;opacity:.8;line-height:1.3}
+  .pr-red .paybox .v{font-family:"Noto Serif Thai",serif;font-weight:700;font-size:16px;margin-top:4px}
+  .pr-mid{background:#fff;border:1px solid var(--line);box-shadow:0 20px 50px -30px rgba(124,50,26,0.25)}
+  .pr-mid .h{font-family:"Noto Serif Thai",serif;font-weight:600;font-size:19px;margin-bottom:18px}
+  .pr-mid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+  .pr-mid li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--ink-800)}
+  .pr-mid li .ic{flex:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#F2B731,#C5421C);display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .pr-mid li .ic svg{width:11px;height:11px;stroke:#fff}
+  .pr-dark{background:linear-gradient(160deg,#211A15,#120D0A);color:#fff;box-shadow:0 26px 60px -30px rgba(0,0,0,0.6)}
+  .pr-dark .h{font-family:"Noto Serif Thai",serif;font-weight:600;font-size:19px;color:#fff;margin-bottom:22px}
+  .pr-dark .drow{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
+  .pr-dark .drow .ic{flex:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(242,183,49,0.4);display:flex;align-items:center;justify-content:center;background:rgba(242,183,49,0.08)}
+  .pr-dark .drow .ic svg{width:20px;height:20px;stroke:var(--gold-400)}
+  .pr-dark .drow .tt{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.4}
+  .pr-dark .drow .tt b{display:block;font-family:"Noto Serif Thai",serif;color:var(--gold-300);font-size:17px;margin-bottom:3px}
+  .pr-dark .fine{font-size:11.5px;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.5}
+  .pr-red .btn{margin-top:24px;width:100%}
 
   /* PROCESS */
   .process{background:linear-gradient(180deg,var(--cream-2),var(--cream-1))}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
-  @media(max-width:820px){.steps{grid-template-columns:1fr;gap:16px}}
-  .step{padding:32px 28px;border-radius:24px;background:var(--glass-bg);border:var(--glass-border);backdrop-filter:blur(20px);box-shadow:var(--glass-shadow);position:relative}
-  .step .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:40px;background:linear-gradient(135deg,#F2B731,#B0331A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
-  .step h3{margin-top:12px;font-size:21px}
-  .step p{margin-top:12px;color:var(--ink-700);font-size:15px;line-height:1.7}
-  .step .arrow{position:absolute;right:-30px;top:50%;transform:translateY(-50%);z-index:2;color:var(--gold-500);width:22px;height:22px}
+  .steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:38px;position:relative}
+  @media(max-width:820px){.steps{grid-template-columns:1fr;gap:20px}}
+  .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px;position:relative;box-shadow:0 14px 40px -26px rgba(124,50,26,0.28)}
+  .step .top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .step .ic{width:46px;height:46px;border-radius:12px;background:var(--cream-1);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+  .step .ic svg{width:24px;height:24px;stroke:var(--red-brand)}
+  .step .n{font-family:"JetBrains Mono",monospace;font-size:22px;font-weight:500;color:var(--ink-900)}
+  .step h3{font-size:18px}
+  .step p{margin-top:9px;color:var(--ink-500);font-size:14px;line-height:1.65}
+  .step .arrow{position:absolute;right:-30px;top:50%;transform:translateY(-50%);z-index:2;width:22px;height:22px;color:var(--red-brand)}
   @media(max-width:820px){.step .arrow{display:none}}
 
   /* OBJECTION */
   .obj{background:var(--cream-1)}
-  .obj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  @media(max-width:920px){.obj-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.obj-grid{grid-template-columns:1fr}}
-  .obj-card{padding:28px 26px;border-radius:22px;background:var(--glass-bg);border:var(--glass-border);backdrop-filter:blur(20px);box-shadow:var(--glass-shadow);transition:transform .3s}
+  .obj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  @media(max-width:980px){.obj-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:620px){.obj-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:420px){.obj-grid{grid-template-columns:1fr}}
+  .obj-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px;transition:transform .3s;box-shadow:0 12px 34px -26px rgba(124,50,26,0.28)}
   .obj-card:hover{transform:translateY(-4px)}
-  .obj-ic{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F6CE69,#DBA01D);color:var(--ink-900);margin-bottom:18px;box-shadow:0 10px 20px -8px rgba(219,160,29,0.5)}
-  .obj-ic svg{width:23px;height:23px}
-  .obj-card h4{font-family:"Noto Serif Thai",serif;font-weight:600;font-size:18px;color:var(--ink-900)}
-  .obj-card p{margin-top:8px;color:var(--ink-700);font-size:14.5px;line-height:1.65}
+  .obj-ic{width:40px;height:40px;border-radius:11px;background:rgba(225,27,34,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .obj-ic svg{width:21px;height:21px;stroke:var(--red-brand)}
+  .obj-card h4{font-family:"Noto Serif Thai",serif;font-weight:600;font-size:15.5px;color:var(--ink-900)}
+  .obj-card p{margin-top:7px;color:var(--ink-500);font-size:13px;line-height:1.55}
 
   /* FAQ */
   .faq{background:linear-gradient(180deg,var(--cream-1),var(--cream-2))}
-  .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-  .fq{border-radius:18px;background:var(--glass-bg);border:var(--glass-border);backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,0.9) inset,0 8px 24px -14px rgba(124,50,26,0.2);overflow:hidden}
-  .fq summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;align-items:center;gap:16px;font-family:"Noto Serif Thai",serif;font-weight:600;font-size:17px;color:var(--ink-900)}
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:960px;margin:0 auto}
+  @media(max-width:760px){.faq-grid{grid-template-columns:1fr}}
+  .fq{border-radius:12px;background:#fff;border:1px solid var(--line);overflow:hidden;height:fit-content;box-shadow:0 8px 24px -20px rgba(124,50,26,0.3)}
+  .fq summary{list-style:none;cursor:pointer;padding:17px 20px;display:flex;align-items:center;gap:14px;font-weight:600;font-size:14.5px;color:var(--ink-900)}
   .fq summary::-webkit-details-marker{display:none}
-  .fq summary .plus{margin-left:auto;flex:none;width:26px;height:26px;border-radius:50%;background:rgba(213,97,61,0.10);color:var(--red-600);display:flex;align-items:center;justify-content:center;transition:transform .3s;font-size:18px;font-weight:400}
-  .fq[open] summary .plus{transform:rotate(45deg)}
-  .fq .a{padding:0 26px 24px 26px;color:var(--ink-700);font-size:15.5px;line-height:1.75;max-width:640px}
-  .fq .a.upsell{border-top:1px solid var(--line-soft);margin-top:2px;padding-top:18px}
-  .fq.bridge{border-color:rgba(219,160,29,0.4)}
-  .fq.bridge summary .plus{background:rgba(219,160,29,0.16);color:var(--gold-600)}
+  .fq summary .chev{margin-left:auto;flex:none;width:18px;height:18px;color:var(--red-brand);transition:transform .3s}
+  .fq[open] summary .chev{transform:rotate(180deg)}
+  .fq .a{padding:0 20px 18px;color:var(--ink-500);font-size:14px;line-height:1.7}
 
   /* FINAL CTA */
-  .final{padding:120px 0}
-  .final-card{position:relative;overflow:hidden;border-radius:40px;padding:80px 56px;background:linear-gradient(135deg,#C5421C 0%,#7A2114 100%);color:#fff;text-align:center}
-  .final-card::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 80% 15%,rgba(245,182,49,0.42),transparent 60%),radial-gradient(60% 60% at 12% 92%,rgba(255,255,255,0.1),transparent 60%);pointer-events:none}
-  .final-card>*{position:relative}
-  .final-card h2{color:#fff;font-size:clamp(30px,4vw,50px)}
-  .final-card p{margin-top:18px;color:rgba(255,247,236,0.88);font-size:17px;line-height:1.7;max-width:560px;margin-left:auto;margin-right:auto}
-  .final-card .btns{margin-top:36px;display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
-  .final-card .btn-gold{background:var(--gold-400)}
-  .final-card .linkc{color:rgba(255,247,236,0.9)}
-  .final-card .linkc:hover{color:#fff}
-  .final-card .micro{margin-top:26px;font-size:13px;color:rgba(255,247,236,0.7);font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
-  @media(max-width:600px){.final-card{padding:56px 26px;border-radius:28px}}
+  .final{padding:70px 0 96px}
+  .final-card{position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(120deg,#E11B22 0%,#A5121A 60%,#7A0E14 100%);color:#fff;display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:20px;padding:44px 48px}
+  @media(max-width:820px){.final-card{grid-template-columns:1fr;text-align:center;padding:40px 26px}}
+  .final-card::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(246,206,105,0.3),transparent 65%);pointer-events:none}
+  .fc-devices{position:relative;min-height:190px}
+  @media(max-width:820px){.fc-devices{display:none}}
+  .fc-devices .frame{position:absolute}
+  .fc-lap{width:70%;left:0;top:20px;--r:-2deg}
+  .fc-lap .scr{height:150px}
+  .fc-ph{width:80px;left:52%;top:6px;--r:4deg;padding:5px}
+  .fc-ph .scr{height:150px;border-radius:12px}
+  .fc-info{position:relative}
+  .fc-logo{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .fc-logo img{width:26px;height:26px}
+  .final-card h2{color:#fff;font-size:clamp(24px,3vw,34px)}
+  .final-card p{margin-top:12px;color:rgba(255,247,236,0.9);font-size:15.5px;line-height:1.65;max-width:520px}
+  @media(max-width:820px){.final-card p{margin-left:auto;margin-right:auto}}
+  .final-card .btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+  @media(max-width:820px){.final-card .btns{justify-content:center}}
+  .final-card .micro{margin-top:18px;font-size:12.5px;color:rgba(255,247,236,0.7);font-family:"JetBrains Mono",monospace}
 
   /* FOOTER */
-  footer{padding:48px 0 40px;background:var(--cream-1);border-top:1px solid var(--line-soft)}
-  .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px}
-  .ft-brand p{margin-top:12px;color:var(--ink-500);font-size:14px;max-width:280px}
-  .ft-contact{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ink-700)}
-  .ft-contact a{color:var(--ink-700)}
-  .ft-contact a:hover{color:var(--red-600)}
-  .ft-bottom{margin-top:40px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-500)}
-  .ft-bottom em{color:var(--red-600);font-style:italic;font-family:"Instrument Serif",serif}
+  footer{padding:40px 0;background:var(--ink-950);color:rgba(255,255,255,0.6)}
+  .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+  .ft-brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:700;font-size:18px}
+  .ft-brand img{width:26px;height:26px}
+  .ft-contact{display:flex;flex-direction:column;gap:7px;font-size:14px}
+  .ft-contact a{color:rgba(255,255,255,0.7)}
+  .ft-contact a:hover{color:#fff}
+  .ft-bottom{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:12.5px}
 
   /* STICKY MOBILE BAR */
-  .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(255,247,236,0.85),rgba(255,247,236,0.98));backdrop-filter:blur(16px);border-top:1px solid var(--line);display:none;transform:translateY(100%);transition:transform .35s ease}
+  .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:11px 14px calc(11px + env(safe-area-inset-bottom));background:rgba(255,247,236,0.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:none;transform:translateY(100%);transition:transform .35s ease}
   .sticky-bar.show{transform:translateY(0)}
-  .sticky-bar a{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;border-radius:14px;background:linear-gradient(135deg,#F6CE69,#DBA01D);color:var(--ink-900);font-weight:700;font-size:15px}
-  .sticky-bar a b{color:var(--red-700)}
+  .sticky-bar a{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px;border-radius:12px;background:var(--red-brand);color:#fff;font-weight:700;font-size:15px}
   @media(max-width:720px){.sticky-bar{display:block}}
 
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 </style>
 </head>
@@ -272,99 +287,98 @@
 <!-- NAV -->
 <nav class="top">
   <div class="nav-inner">
-    <a class="brand" href="/" style="color:inherit"><img src="/assets/flowlanding-logo.png" alt="FlowLanding" /><span>FlowLanding</span></a>
+    <a class="brand" href="/"><img src="/assets/flowlanding-logo.png" alt="FlowLanding" /><span>FlowLanding</span></a>
     <div class="nav-links">
-      <a href="#why">ทำไมต้องมีเว็บ</a>
-      <a href="#portfolio">ผลงานจริง</a>
-      <a href="#pricing">ราคา</a>
-      <a href="#process">ขั้นตอน</a>
-      <a href="#faq">คำถาม</a>
+      <a href="FlowLanding.html#solution">บริการของเรา</a>
+      <a href="#portfolio">ผลงาน</a>
+      <a href="#pricing">แพ็กเกจ</a>
+      <a href="#process">ขั้นตอนการทำงาน</a>
+      <a href="FlowLanding.html#about">เกี่ยวกับเรา</a>
+      <a href="/">บทความ</a>
     </div>
-    <a class="btn btn-gold" href="https://line.me/R/ti/p/@flowlanding">ปรึกษาฟรีทาง LINE</a>
+    <a class="btn btn-line" href="https://line.me/R/ti/p/@flowlanding"><span class="line-ic"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.06.7.2.8.5.1.2.06.6.03.9l-.13.8c-.04.2-.2.9.8.5s5.3-3.1 7.2-5.3C20.4 15 22 13.2 22 11c0-4.4-4.5-8-10-8z"/></svg></span>ปรึกษาฟรีทาง LINE</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<div class="canvas">
 <section class="hero">
+  <div class="flourish">
+    <svg viewBox="0 0 600 500" fill="none" stroke="#DBA01D" stroke-width="1.5" opacity="0.6"><path d="M-20 260 C120 180 200 320 340 240 C460 170 520 300 640 210"/><path d="M-20 300 C120 220 200 360 340 280 C460 210 520 340 640 250"/><path d="M-20 340 C120 260 200 400 340 320 C460 250 520 380 640 290"/></svg>
+  </div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow gold">Website for Business</span>
-        <h1 style="margin-top:24px;">งบไม่เยอะ<br/>ก็มีเว็บไซต์ที่<span class="accent">ดูเป็นธุรกิจจริง</span>ได้</h1>
+        <span class="eyebrow">Website for Business</span>
+        <h1>งบไม่เยอะ<br/>ก็มีเว็บไซต์ที่<br/><span class="red">ดูเป็นธุรกิจจริงได้</span></h1>
         <p class="hero-sub">สำหรับเจ้าของธุรกิจที่มี Facebook หรือ LINE อยู่แล้ว แต่อยากมีเว็บไซต์ไว้แนะนำธุรกิจ รับลูกค้าจาก Google และดูน่าเชื่อถือกว่าเดิม — โดยไม่ต้องเริ่มจากระบบใหญ่</p>
         <div class="price-strip">
-          <span>เว็บไซต์ธุรกิจ 1 หน้า</span><span class="sep"></span>
-          <span>เริ่มต้น <b>฿4,999</b></span><span class="sep"></span>
+          <span class="fire">🔥</span><span>เว็บไซต์ธุรกิจ 1 หน้า</span><span class="sep">·</span>
+          <span>เริ่มต้น <b>฿4,999</b></span><span class="sep">·</span>
           <span>พร้อมใช้งานภายใน 5 วัน</span>
         </div>
         <div class="hero-cta">
-          <a class="btn btn-gold" href="https://line.me/R/ti/p/@flowlanding">ปรึกษาก่อนฟรีทาง LINE
+          <a class="btn btn-line" href="https://line.me/R/ti/p/@flowlanding"><span class="line-ic"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.06.7.2.8.5.1.2.06.6.03.9l-.13.8c-.04.2-.2.9.8.5s5.3-3.1 7.2-5.3C20.4 15 22 13.2 22 11c0-4.4-4.5-8-10-8z"/></svg></span>ปรึกษาฟรีทาง LINE</a>
+          <a class="btn btn-dark" href="#portfolio">ดูผลงานจริง
             <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a class="linkc" href="#portfolio">ดูผลงานจริง
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           </a>
         </div>
         <div class="hero-micro">มัดจำเริ่มงาน ฿2,500 · ไม่มีค่าใช้จ่ายแอบแฝง</div>
       </div>
 
       <div class="devices">
-        <div class="browser laptop float">
-          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">dealuxeglobal.com</div></div>
-          <div class="shot"><image-slot id="pf-dealuxe-hero" placeholder="Screenshot: dealuxeglobal.com — hero โทนทอง" object-fit="cover"></image-slot></div>
-          <div class="base"></div>
+        <div class="frame d-laptop float">
+          <div class="glassbar"><i></i><i></i><i></i></div>
+          <div class="scr"><image-slot id="hero-siam" placeholder="Screenshot: siamlawglob.com — Legal Solutions โทนเข้ม" object-fit="cover"></image-slot></div>
         </div>
-        <div class="browser mini-br float c">
-          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">kaisuksun.com</div></div>
-          <div class="shot"><image-slot id="pf-kai-hero" placeholder="Screenshot: kaisuksun.com" object-fit="cover"></image-slot></div>
+        <div class="frame d-tablet float b">
+          <div class="scr"><image-slot id="hero-dealuxe" placeholder="Screenshot: dealuxeglobal.com — Global Sourcing ship" object-fit="cover"></image-slot></div>
         </div>
-        <div class="phone-fr float b">
-          <div class="screen"><image-slot id="pf-lekakim-hero" placeholder="Screenshot มือถือ: lekakim.com" object-fit="cover"></image-slot></div>
+        <div class="frame d-fruits float c">
+          <div class="scr"><image-slot id="hero-fruits" placeholder="Screenshot: dealuxefruits.com — Fresh Fruits" object-fit="cover"></image-slot></div>
+        </div>
+        <div class="frame d-phone float d">
+          <div class="scr"><image-slot id="hero-lekakim" placeholder="Screenshot มือถือ: lekakim.com" object-fit="cover"></image-slot></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-</div>
 
-<!-- WHY -->
+<!-- WHY / VS -->
 <section class="why" id="why">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Facebook vs Website</span>
-      <h2 style="margin-top:22px;">Facebook ดีครับ<br/>แต่ไม่ได้ทำหน้าที่แทน<span class="ital" style="color:var(--red-600)">เว็บไซต์</span>ได้ทุกอย่าง</h2>
+    <div class="sec-head reveal">
+      <h2>Facebook ดีครับ แต่ไม่ได้ทำหน้าที่แทน<span class="ital" style="color:var(--red-brand)">เว็บไซต์</span>ได้ทุกอย่าง</h2>
     </div>
-    <div class="cmp-grid">
-      <div class="cmp plain reveal">
-        <div class="tag">Social Channel</div>
+    <div class="vs-wrap reveal">
+      <div class="vs-card vs-fb">
+        <div class="logos">
+          <span class="lg fb"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.24 2.7.24v3h-1.5c-1.5 0-2 .93-2 1.9v2.2h3.4l-.55 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></span>
+          <span class="lg line"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.06.7.2.8.5.1.2.06.6.03.9l-.13.8c-.04.2-.2.9.8.5s5.3-3.1 7.2-5.3C20.4 15 22 13.2 22 11c0-4.4-4.5-8-10-8z"/></svg></span>
+        </div>
         <h3>Facebook &amp; LINE</h3>
-        <div class="sub">เหมาะสำหรับ</div>
         <ul>
-          <li>คุยกับลูกค้า</li>
-          <li>โพสต์ content</li>
-          <li>ปิดการขาย</li>
-          <li>สร้าง community</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span>คนเห็นจำกัด</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span>ไม่มีคอนเทนต์เป็นระบบ</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span>ค้นหาใน Google ไม่เจอ</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span>นำเสนอได้น้อยกว่าคู่แข่ง</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span>วางโมเดลได้จำกัด</li>
         </ul>
       </div>
-      <div class="cmp hi reveal">
-        <div class="tag">Business Website</div>
+      <div class="vs-card vs-web">
+        <div class="logos">
+          <span class="lg web"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></span>
+        </div>
         <h3>เว็บไซต์ธุรกิจ</h3>
-        <div class="sub">เหมาะสำหรับ</div>
         <ul>
-          <li>แนะนำธุรกิจอย่างเป็นทางการ</li>
-          <li>รวมสินค้าและบริการไว้ที่เดียว</li>
-          <li>ส่งลิงก์ให้ลูกค้าดูข้อมูลได้ทันที</li>
-          <li>รองรับคนค้นหาจาก Google</li>
-          <li>สร้างความน่าเชื่อถือกับลูกค้าใหม่</li>
-          <li>ใช้เป็นหน้าร้านหลักของธุรกิจ</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>แนะนำธุรกิจได้ครบทุกด้าน</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>รองรับลูกค้าหาเจอเร็ว (SEO)</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>เพิ่มโอกาสให้ลูกค้าติดต่อได้ทันที</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>สร้างความน่าเชื่อถือให้แบรนด์</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>เป็นทรัพย์สินของธุรกิจคุณเอง</li>
         </ul>
       </div>
-    </div>
-    <div class="why-close reveal">
-      <strong>ไม่ต้องเลือกอย่างใดอย่างหนึ่ง</strong><br/>
-      เว็บไซต์ทำหน้าที่เป็น "หน้าร้านหลัก" ของธุรกิจ ส่วน Facebook และ LINE ยังใช้ขายและคุยกับลูกค้าเหมือนเดิม
-      <span class="q">แค่ตอนนี้ เวลาลูกค้าถามว่า <em>"มีเว็บไหม?"</em> คุณจะมีลิงก์ส่งให้เขาได้ทันที</span>
+      <div class="vs-badge">VS</div>
     </div>
   </div>
 </section>
@@ -372,66 +386,45 @@
 <!-- PORTFOLIO -->
 <section class="pf" id="portfolio">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Real work</span>
-      <h2 style="margin-top:22px;">ผลงานจริง ไม่ใช่ <span class="ital" style="color:var(--red-600)">Template Demo</span></h2>
-      <p>เว็บไซต์ที่เราออกแบบให้ธุรกิจจริง — กดเข้าไปดูได้เลย</p>
+    <div class="sec-head reveal">
+      <h2>ผลงานจริง ไม่ใช่ <span class="ital" style="color:var(--red-brand)">Template Demo</span></h2>
+      <p>เว็บไซต์ที่เราพัฒนาให้ลูกค้าจริง — พร้อมใช้งานจริง</p>
     </div>
-
-    <div class="pf-item reveal">
-      <div class="pf-shot">
-        <div class="browser">
-          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">www.dealuxeglobal.com</div></div>
-          <div class="shot"><image-slot id="pf-dealuxe" placeholder="Screenshot: dealuxeglobal.com — hero port โทนทอง" object-fit="cover"></image-slot></div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <span class="pf-tag">International Trading</span>
-        <h3>Dealuxe Global Enterprise</h3>
-        <p>เว็บไซต์ Trading House ระดับนานาชาติ ครบทั้งสินค้า 6 กลุ่ม ระบบ logistics และช่องทางขอใบเสนอราคา</p>
-        <a class="btn btn-ghost" href="https://www.dealuxeglobal.com/" target="_blank" rel="noopener">เปิดเว็บไซต์จริง
-          <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-      </div>
+    <div class="pf-grid reveal">
+      <a class="pf-card" href="https://siamlawglob.com/" target="_blank" rel="noopener">
+        <div class="frame"><div class="glassbar"><i></i><i></i><i></i></div><div class="scr"><image-slot id="pf-siam" placeholder="siamlawglob.com" object-fit="cover"></image-slot></div></div>
+        <div class="url">siamlawglob.com</div>
+        <div class="tag">กฎหมาย / ที่ปรึกษาธุรกิจ</div>
+        <div class="desc">สำนักงานกฎหมายธุรกิจครบวงจร ทั้งในไทยและต่างประเทศ</div>
+      </a>
+      <a class="pf-card" href="https://www.dealuxeglobal.com/" target="_blank" rel="noopener">
+        <div class="frame"><div class="glassbar"><i></i><i></i><i></i></div><div class="scr"><image-slot id="pf-dealuxe" placeholder="dealuxeglobal.com" object-fit="cover"></image-slot></div></div>
+        <div class="url">dealuxeglobal.com</div>
+        <div class="tag">นำเข้า–ส่งออก / เทรดดิ้ง</div>
+        <div class="desc">บริการจัดหาสินค้าจากทั่วโลก และนำเข้าแบบครบวงจร</div>
+      </a>
+      <a class="pf-card" href="https://kaisuksun.com/" target="_blank" rel="noopener">
+        <div class="frame"><div class="glassbar"><i></i><i></i><i></i></div><div class="scr"><image-slot id="pf-kai" placeholder="kaisuksun.com" object-fit="cover"></image-slot></div></div>
+        <div class="url">kaisuksun.com</div>
+        <div class="tag">นำเข้า–ส่งออก / อุตสาหกรรม</div>
+        <div class="desc">ผู้นำเข้าและจัดจำหน่ายสินค้าอุตสาหกรรมคุณภาพสูง</div>
+      </a>
+      <a class="pf-card" href="https://www.dealuxefruits.com/" target="_blank" rel="noopener">
+        <div class="frame"><div class="glassbar"><i></i><i></i><i></i></div><div class="scr"><image-slot id="pf-fruits" placeholder="dealuxefruits.com" object-fit="cover"></image-slot></div></div>
+        <div class="url">dealuxefruits.com</div>
+        <div class="tag">เกษตร / ส่งออก</div>
+        <div class="desc">ส่งออกผลไม้ไทยคุณภาพพรีเมียม ไปยังตลาดทั่วโลก</div>
+      </a>
+      <a class="pf-card" href="https://www.lekakim.com/" target="_blank" rel="noopener">
+        <div class="frame"><div class="glassbar"><i></i><i></i><i></i></div><div class="scr"><image-slot id="pf-lekakim" placeholder="lekakim.com" object-fit="cover"></image-slot></div></div>
+        <div class="url">lekakim.com</div>
+        <div class="tag">AI / Product</div>
+        <div class="desc">แพลตฟอร์ม AI ผู้ช่วยอัจฉริยะ สำหรับองค์กร</div>
+      </a>
     </div>
-
-    <div class="pf-item flip reveal">
-      <div class="pf-shot">
-        <div class="browser">
-          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">www.dealuxefruits.com</div></div>
-          <div class="shot"><image-slot id="pf-fruits" placeholder="Screenshot: dealuxefruits.com — ผลไม้พรีเมียม" object-fit="cover"></image-slot></div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <span class="pf-tag">Premium Export / Agriculture</span>
-        <h3>Dealuxe Fruits</h3>
-        <p>เว็บไซต์ผลไม้พรีเมียมส่งออก จัดวาง product catalog ให้สินค้าเกษตรดูหรูและน่าเชื่อถือระดับสากล</p>
-        <a class="btn btn-ghost" href="https://www.dealuxefruits.com/" target="_blank" rel="noopener">เปิดเว็บไซต์จริง
-          <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="pf-item reveal">
-      <div class="pf-shot">
-        <div class="browser">
-          <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">www.lekakim.com</div></div>
-          <div class="shot"><image-slot id="pf-lekakim" placeholder="Screenshot: lekakim.com — AI product" object-fit="cover"></image-slot></div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <span class="pf-tag">AI Product / Service</span>
-        <h3>เลขาคิม — AI Secretary</h3>
-        <p>เว็บไซต์บริการ AI สำหรับเจ้าของธุรกิจไทย ตั้งแต่แนะนำสินค้าไปจนถึงสมัครใช้งาน</p>
-        <a class="btn btn-ghost" href="https://www.lekakim.com/" target="_blank" rel="noopener">เปิดเว็บไซต์จริง
-          <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-      </div>
-    </div>
-
     <div class="pf-more reveal">
-      <a class="linkc" href="https://kaisuksun.com/" target="_blank" rel="noopener" style="color:var(--red-600);font-weight:600;">ดูผลงานเพิ่มเติม — Kai Suk Sun &amp; Siam Law &amp; Partners
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      <a class="btn btn-ghost" href="https://flowlanding.co/" target="_blank" rel="noopener">ดูผลงานทั้งหมด
+        <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
@@ -440,51 +433,49 @@
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow gold">Pricing</span>
-      <h2 style="margin-top:22px;">เริ่มต้นแบบพอดี<br/>ไม่ต้องทำ<span class="ital" style="color:var(--red-600)">เกินความจำเป็น</span></h2>
-    </div>
-    <div class="offer-wrap">
-      <div class="offer reveal">
-        <div class="pkg">Starter Website</div>
-        <div class="price">฿4,999</div>
-        <div class="desc">เว็บไซต์ธุรกิจ 1 หน้า<br/>สำหรับแนะนำธุรกิจและรับการติดต่อจากลูกค้า</div>
-        <div class="checks">
-          <div>เว็บไซต์ 1 หน้า</div>
-          <div>ปรับดีไซน์และสีตามแบรนด์</div>
-          <div>รองรับมือถือ / Tablet / Desktop</div>
-          <div>ส่วนแนะนำธุรกิจ</div>
-          <div>ส่วนสินค้าหรือบริการ</div>
-          <div>ช่องทางติดต่อ</div>
-          <div>ปุ่ม LINE</div>
-          <div>ปุ่มโทร</div>
-          <div>แผนที่ Google Maps</div>
-          <div>ฟอร์มติดต่อ</div>
-          <div>เชื่อม Domain ของคุณ</div>
-          <div>แก้ไขได้ 2 รอบ</div>
-          <div style="grid-column:1/-1">ส่งงานภายใน 5 วันทำการ หลังได้รับข้อมูลครบ</div>
+    <div class="pr-grid">
+      <div class="pr-card pr-red reveal">
+        <h3>เริ่มต้นแบบพอดี<br/>ไม่ต้องทำเกินความจำเป็น</h3>
+        <div class="st">เริ่มต้น</div>
+        <div class="price"><small>฿</small>4,999</div>
+        <div class="cap">เว็บไซต์ธุรกิจ 1 หน้า ครบ จบ พร้อมใช้งานภายใน 5 วัน</div>
+        <div class="paybox">
+          <div><div class="l">มัดจำเริ่มงาน</div><div class="v">฿2,500</div></div>
+          <div><div class="l">ชำระส่วนที่เหลือเมื่อจบงาน</div><div class="v">฿2,499</div></div>
+          <div><div class="l">รวมทั้งหมด</div><div class="v">฿4,999</div></div>
         </div>
-        <div class="pay">
-          <div class="row"><span>มัดจำเริ่มงาน</span><b>฿2,500</b></div>
-          <div class="row" style="border-top:1px solid var(--line-soft)"><span>ชำระก่อนส่ง Final</span><b>฿2,499</b></div>
-        </div>
-        <a class="btn btn-gold" href="https://line.me/R/ti/p/@flowlanding">เริ่มต้นคุยกับเราทาง LINE
-          <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
+        <a class="btn btn-white" href="https://line.me/R/ti/p/@flowlanding"><span class="line-ic"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.06.7.2.8.5.1.2.06.6.03.9l-.13.8c-.04.2-.2.9.8.5s5.3-3.1 7.2-5.3C20.4 15 22 13.2 22 11c0-4.4-4.5-8-10-8z"/></svg></span>เริ่มต้นคุยกับเราทาง LINE</a>
       </div>
 
-      <div class="excl reveal">
-        <div class="h">สิ่งที่แพ็กเกจเริ่มต้นยังไม่รวม</div>
-        <div class="items">
-          <span>ระบบสมาชิก / Login</span>
-          <span>ระบบชำระเงินออนไลน์</span>
-          <span>ระบบจองคิว / นัดหมาย</span>
-          <span>ร้านค้าออนไลน์เต็มรูปแบบ</span>
-          <span>ระบบ Automation</span>
-          <span>ออกแบบโลโก้ใหม่</span>
-          <span>ค่า Domain / Hosting</span>
+      <div class="pr-card pr-mid reveal">
+        <div class="h">สิ่งที่คุณจะได้รับในแพ็กเกจ</div>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>ออกแบบเว็บไซต์ธุรกิจ 1 หน้า (Responsive)</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>เนื้อหาแนะนำธุรกิจ / บริการ</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>ฟอร์มติดต่อ / ปุ่มโทร / ปุ่ม LINE</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>ตั้งค่าพื้นฐาน SEO ให้ Google หาเจอง่าย</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>เชื่อมต่อ Domain .com</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>โหลดไว รองรับทุกอุปกรณ์</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>แก้ไขงานได้ 2 รอบ</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>ส่งมอบภายใน 5 วันทำการ</li>
+        </ul>
+      </div>
+
+      <div class="pr-card pr-dark reveal">
+        <div class="h">เงื่อนไขการชำระเงิน</div>
+        <div class="drow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <div class="tt"><b>มัดจำเริ่มงาน ฿2,500</b>เพื่อเริ่มกระบวนการออกแบบ</div>
         </div>
-        <div class="note">ถ้าธุรกิจของคุณต้องการมากกว่านี้ เราประเมินขอบเขตและราคาเพิ่มให้ก่อนเริ่มงาน — <strong>ไม่มีการทำเพิ่มแล้วค่อยแจ้งราคาทีหลัง</strong></div>
+        <div class="drow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="tt"><b>ชำระส่วนที่เหลือ ฿2,499</b>เมื่อเว็บเสร็จและตรวจสอบเรียบร้อย</div>
+        </div>
+        <div class="drow">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <div class="tt"><b>ไม่มีค่าใช้จ่ายแอบแฝง</b>ราคานี้คือทุกอย่างตามที่แจ้งไว้</div>
+        </div>
+        <div class="fine">*ราคานี้สำหรับเว็บไซต์ 1 หน้าเท่านั้น</div>
       </div>
     </div>
   </div>
@@ -493,27 +484,35 @@
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">3 steps</span>
-      <h2 style="margin-top:22px;">คุณทำธุรกิจต่อไป<br/>เรื่องเว็บไซต์ <span class="ital" style="color:var(--red-600)">ให้เราจัดการ</span></h2>
+    <div class="sec-head reveal">
+      <h2>คุณทำธุรกิจต่อไป เรื่องเว็บไซต์<span class="ital" style="color:var(--red-brand)">ให้เราจัดการ</span></h2>
     </div>
     <div class="steps">
       <div class="step reveal">
-        <div class="n">01</div>
-        <h3>ส่งข้อมูลให้เรา</h3>
-        <p>ชื่อธุรกิจ บริการ เบอร์โทร LINE รูปที่มี หรือส่ง Facebook Page ให้ดูก็ได้ — เราเก็บข้อมูลให้เสร็จภายในวันเดียว</p>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <div class="top">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8M8 12h5"/></svg></div>
+          <div class="n">01</div>
+        </div>
+        <h3>คุยและเก็บข้อมูลธุรกิจ</h3>
+        <p>เราจะสอบถามข้อมูลธุรกิจ กลุ่มลูกค้า เนื้อหา และเป้าหมายของเว็บไซต์</p>
+        <svg class="arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M4 11h12l-4-4 1.4-1.4L21 12l-7.6 6.4L12 17l4-4H4z"/></svg>
       </div>
       <div class="step reveal">
-        <div class="n">02</div>
-        <h3>เราออกแบบให้</h3>
-        <p>จัดโครงสร้าง เนื้อหา สี และหน้าตาให้เหมาะกับธุรกิจของคุณ — ส่ง Draft ให้ดูภายใน 3 วันทำการ</p>
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <div class="top">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><circle cx="9" cy="9" r="1.4"/><path d="M13 8h4M13 11h3"/></svg></div>
+          <div class="n">02</div>
+        </div>
+        <h3>ออกแบบและพัฒนาเว็บไซต์</h3>
+        <p>ออกแบบให้สวย น่าเชื่อถือ และพัฒนาเว็บไซต์ให้พร้อมใช้งานจริง</p>
+        <svg class="arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M4 11h12l-4-4 1.4-1.4L21 12l-7.6 6.4L12 17l4-4H4z"/></svg>
       </div>
       <div class="step reveal">
-        <div class="n">03</div>
-        <h3>ตรวจ แก้ไข เปิดใช้งาน</h3>
-        <p>แก้ไขไม่เกิน 2 รอบตามที่ตกลง เชื่อม Domain พร้อมเปิดใช้งานจริง — เว็บไซต์ของคุณ Live ภายใน 5 วันทำการ</p>
+        <div class="top">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14l2 2 4-4"/></svg></div>
+          <div class="n">03</div>
+        </div>
+        <h3>ตรวจสอบและส่งมอบ</h3>
+        <p>ตรวจสอบงานร่วมกัน ปรับแก้ให้ตรงตามต้องการ จากนั้นส่งมอบและเปิดใช้งานจริง</p>
       </div>
     </div>
   </div>
@@ -522,30 +521,34 @@
 <!-- OBJECTION -->
 <section class="obj">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">No worries</span>
-      <h2 style="margin-top:22px;">ยังไม่มีทุกอย่างพร้อม?<br/><span class="ital" style="color:var(--red-600)">ไม่เป็นไรครับ</span></h2>
+    <div class="sec-head reveal">
+      <h2>ยังไม่มีทุกอย่างพร้อม? <span class="ital" style="color:var(--red-brand)">ไม่เป็นไรครับ</span></h2>
     </div>
     <div class="obj-grid">
       <div class="obj-card reveal">
-        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
-        <h4>ยังไม่มีข้อความ</h4>
-        <p>ไม่ต้องเขียนเอง ส่งข้อมูลธุรกิจมา เราจัดโครงสร้างเนื้อหาให้</p>
+        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+        <h4>ยังไม่มีข้อมูลครบ</h4>
+        <p>เราช่วยตั้งคำถามและเรียบเรียงข้อมูลให้ใหม่</p>
       </div>
       <div class="obj-card reveal">
-        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-        <h4>รูปไม่พอ</h4>
-        <p>บอกเราว่าธุรกิจทำอะไร เราแนะนำรูปที่ควรถ่าย และใช้ภาพที่เหมาะสมเสริมได้</p>
+        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M7 6l2-3h6l2 3"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <h4>ยังไม่มีรูปภาพ</h4>
+        <p>เรามีทีมช่วยแนะนำการเลือกและจัดวางภาพให้เหมาะสม</p>
       </div>
       <div class="obj-card reveal">
-        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></div>
+        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>ยังไม่มี Logo</h4>
+        <p>เราออกแบบโลโก้ให้ได้ (มีค่าใช้จ่ายเพิ่มเติม)</p>
+      </div>
+      <div class="obj-card reveal">
+        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></div>
         <h4>ยังไม่มี Domain</h4>
-        <p>ไม่ต้องซื้อเองก่อน เราช่วยแนะนำชื่อ Domain และตั้งค่าให้ครบ</p>
+        <p>เราช่วยจัดหา Domain และตั้งค่าให้ครบ</p>
       </div>
       <div class="obj-card reveal">
-        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h4>ไม่รู้เรื่องเว็บไซต์เลย</h4>
-        <p>ไม่ต้องรู้ครับ เราคุยกันเป็นภาษาธุรกิจ ไม่ใช่ภาษาโปรแกรม</p>
+        <div class="obj-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></div>
+        <h4>ไม่รู้จะเริ่มยังไง</h4>
+        <p>เราช่วยแนะนำแนวทางและวางแผนตั้งแต่ต้นจนจบ</p>
       </div>
     </div>
   </div>
@@ -554,82 +557,79 @@
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2 style="margin-top:22px;">คำถามที่<span class="ital" style="color:var(--red-600)">มักถามบ่อย</span></h2>
+    <div class="sec-head reveal">
+      <h2>คำถามที่<span class="ital" style="color:var(--red-brand)">มักถามบ่อย</span></h2>
     </div>
-    <div class="faq-list">
-      <details class="fq reveal"><summary>ต้องมีโลโก้และรูปก่อนหรือเปล่า?<span class="plus">+</span></summary><div class="a">ไม่จำเป็นครับ ถ้ามีอยู่แล้วก็ส่งมาได้เลย ถ้ายังไม่มี เราช่วยจัดหน้าเว็บให้ดูดีได้ โดยใช้ชื่อธุรกิจและภาพที่เหมาะสม</div></details>
-      <details class="fq reveal"><summary>แก้ไขงานได้กี่รอบ?<span class="plus">+</span></summary><div class="a">2 รอบครับ นับจากที่ส่ง Draft ให้ดู ถ้าต้องการแก้เพิ่มเติมนอกเหนือจากนี้ สามารถตกลงค่าใช้จ่ายเพิ่มได้ก่อนเริ่มแก้</div></details>
-      <details class="fq reveal"><summary>5 วันเริ่มนับจากเมื่อไร?<span class="plus">+</span></summary><div class="a">นับจากวันที่ได้รับข้อมูลครบและชำระมัดจำแล้ว ถ้าข้อมูลยังไม่ครบ เราจะแจ้งให้ทราบว่าขาดอะไรบ้าง</div></details>
-      <details class="fq reveal"><summary>ค่า Domain และ Hosting รวมในราคาไหม?<span class="plus">+</span></summary><div class="a">ยังไม่รวมครับ เพราะเป็นค่าบริการรายปีที่ขึ้นอยู่กับชื่อ Domain ที่เลือก แต่เราช่วยแนะนำและตั้งค่าให้ครบ</div></details>
-      <details class="fq reveal"><summary>จ่ายเงินยังไง?<span class="plus">+</span></summary><div class="a">มัดจำ ฿2,500 ก่อนเริ่มงาน ที่เหลือ ฿2,499 ชำระก่อนเปิดใช้งานจริง โอนผ่านบัญชีธนาคาร</div></details>
-      <details class="fq reveal"><summary>อยากเพิ่มหน้าหรือฟีเจอร์ทีหลังได้ไหม?<span class="plus">+</span></summary><div class="a">ได้ครับ เว็บไซต์ออกแบบมาให้ขยายเพิ่มได้ เริ่มแบบพอดีก่อน แล้วค่อยเพิ่มเมื่อธุรกิจพร้อม</div></details>
-      <details class="fq bridge reveal"><summary>ถ้าต้องการระบบมากกว่าเว็บไซต์ธรรมดา ทำได้ไหม?<span class="plus">+</span></summary><div class="a upsell">ได้ครับ เว็บไซต์เป็นจุดเริ่มต้นที่ดี เมื่อพร้อมก็เชื่อมต่อ LINE OA ระบบตอบลูกค้าอัตโนมัติ ระบบ CRM Dashboard หรือ Automation เพิ่มเติมได้ — ทั้งหมดนี้คือบริการหลักของ FlowLanding</div></details>
+    <div class="faq-grid">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <details class="fq reveal"><summary>1. เว็บไซต์ 1 หน้า เพียงพอสำหรับธุรกิจขนาดเล็กไหม?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">เพียงพอครับสำหรับการแนะนำธุรกิจ รวมบริการ และรับการติดต่อ เว็บ 1 หน้าออกแบบมาให้ครบทุกส่วนที่ลูกค้าต้องการเห็น และขยายเพิ่มได้ในอนาคต</div></details>
+        <details class="fq reveal"><summary>2. ใช้เวลานานแค่ไหนในการทำเว็บไซต์?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">ภายใน 5 วันทำการ นับจากได้รับข้อมูลครบและชำระมัดจำแล้ว ถ้าข้อมูลยังไม่ครบ เราจะแจ้งให้ทราบว่าขาดอะไร</div></details>
+        <details class="fq reveal"><summary>3. ถ้าต้องการเพิ่มหน้าในอนาคต ทำได้ไหม?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">ได้ครับ เว็บไซต์ออกแบบมาให้ขยายเพิ่มได้ เริ่มแบบพอดีก่อน แล้วค่อยเพิ่มหน้าหรือฟีเจอร์เมื่อธุรกิจพร้อม</div></details>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <details class="fq reveal"><summary>4. เว็บไซต์นี้รองรับมือถือดีหรือไม่?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">รองรับครับ ทุกเว็บออกแบบแบบ Responsive แสดงผลสวยงามทั้งบนมือถือ แท็บเล็ต และคอมพิวเตอร์</div></details>
+        <details class="fq reveal"><summary>5. มีบริการดูแลและแก้ไขไหม?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">แพ็กเกจรวมการแก้ไข 2 รอบก่อนส่งมอบ หลังจากนั้นหากต้องการดูแลต่อเนื่อง สามารถตกลงแพ็กเกจดูแลเพิ่มเติมได้</div></details>
+        <details class="fq reveal"><summary>6. ถ้าไม่พอใจ สามารถขอแก้ไขได้กี่ครั้ง?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="a">แก้ไขได้ 2 รอบ นับจากที่ส่ง Draft ให้ดู หากต้องการแก้เพิ่มเติมนอกเหนือจากนี้ สามารถตกลงค่าใช้จ่ายเพิ่มได้ก่อนเริ่มแก้</div></details>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<div class="canvas">
 <section class="final">
   <div class="wrap">
     <div class="final-card reveal">
-      <span class="eyebrow" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.22);color:var(--gold-300)">Let's talk</span>
-      <h2 style="margin-top:22px;">ยังไม่แน่ใจว่าเว็บแบบไหน<br/>เหมาะกับธุรกิจคุณ?</h2>
-      <p>ส่ง Facebook Page หรือข้อมูลธุรกิจมาให้เราดูก่อนได้ เราจะบอกตรง ๆ ว่าควรเริ่มจากตรงไหน ถ้ายังไม่จำเป็นต้องทำตอนนี้ เราก็บอก</p>
-      <div class="btns">
-        <a class="btn btn-gold" href="https://line.me/R/ti/p/@flowlanding">ปรึกษาฟรีทาง LINE
-          <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <a class="linkc" href="tel:0836466594">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>
-          โทรหาเราตอนนี้
-        </a>
+      <div class="fc-devices">
+        <div class="frame fc-lap float"><div class="glassbar"><i></i><i></i><i></i></div><div class="scr"><image-slot id="fc-lap" placeholder="Screenshot ผลงาน" object-fit="cover"></image-slot></div></div>
+        <div class="frame fc-ph float b"><div class="scr"><image-slot id="fc-ph" placeholder="มือถือ" object-fit="cover"></image-slot></div></div>
       </div>
-      <div class="micro">ใช้เวลาคุยประมาณ 10–15 นาที · ไม่มีค่าใช้จ่าย</div>
+      <div class="fc-info">
+        <div class="fc-logo"><img src="/assets/flowlanding-logo.png" alt="" /></div>
+        <h2>ยังไม่แน่ใจว่าเว็บแบบไหนเหมาะกับธุรกิจคุณ?</h2>
+        <p>ปรึกษาฟรี ไม่มีค่าใช้จ่าย พร้อมแนะนำแนวทางที่เหมาะสมที่สุดสำหรับคุณ</p>
+        <div class="btns">
+          <a class="btn btn-white" href="https://line.me/R/ti/p/@flowlanding"><span class="line-ic"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.06.7.2.8.5.1.2.06.6.03.9l-.13.8c-.04.2-.2.9.8.5s5.3-3.1 7.2-5.3C20.4 15 22 13.2 22 11c0-4.4-4.5-8-10-8z"/></svg></span>ปรึกษาฟรีทาง LINE</a>
+          <a class="btn btn-dark" href="tel:0836466594">
+            <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>
+            โทรหาเราเลย
+          </a>
+        </div>
+        <div class="micro">ตอบไว ภายใน 10 ชั่วโมง (จ.–ส. 09:00 – 18:00)</div>
+      </div>
     </div>
   </div>
 </section>
-</div>
 
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="ft-top">
-      <div class="ft-brand">
-        <a class="brand" href="/" style="color:inherit"><img src="/assets/flowlanding-logo.png" alt="" /><span>FlowLanding</span></a>
-        <p>AI Business Systems for SME Owners — ลดงาน · เพิ่มกำไร · ควบคุมธุรกิจได้มากขึ้น</p>
+      <div>
+        <div class="ft-brand"><img src="/assets/flowlanding-logo.png" alt="" /><span>FlowLanding</span></div>
+        <p style="margin-top:12px;font-size:14px;max-width:280px;">AI Business Systems for SME Owners — ลดงาน · เพิ่มกำไร · ควบคุมธุรกิจได้มากขึ้น</p>
       </div>
       <div class="ft-contact">
         <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a>
         <a href="tel:0836466594">083-646-6594</a>
         <a href="https://line.me/R/ti/p/@flowlanding">LINE OA: @flowlanding</a>
-        <a href="/">← กลับหน้าหลัก</a>
+        <a href="/" style="color:var(--gold-400)">← กลับหน้าหลัก</a>
       </div>
     </div>
-    <div class="ft-bottom">
-      <div>© 2026 FlowLanding · All rights reserved</div>
-      <div>Built for SME owners <em>who deserve their time back</em></div>
-    </div>
+    <div class="ft-bottom">© 2026 FlowLanding · All rights reserved</div>
   </div>
 </footer>
 
 <!-- STICKY MOBILE BAR -->
 <div class="sticky-bar" id="stickyBar">
-  <a href="https://line.me/R/ti/p/@flowlanding"><b>฿4,999</b> · ปรึกษาฟรีทาง LINE
-    <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:17px;height:17px"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-  </a>
+  <a href="https://line.me/R/ti/p/@flowlanding"><span class="line-ic"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.06.7.2.8.5.1.2.06.6.03.9l-.13.8c-.04.2-.2.9.8.5s5.3-3.1 7.2-5.3C20.4 15 22 13.2 22 11c0-4.4-4.5-8-10-8z"/></svg></span>฿4,999 · ปรึกษาฟรีทาง LINE</a>
 </div>
 
 <script>
-  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  const bar = document.getElementById('stickyBar');
-  const hero = document.querySelector('.hero');
-  const so = new IntersectionObserver((es)=>{es.forEach(e=>{bar.classList.toggle('show',!e.isIntersecting)})},{threshold:0});
-  if(hero) so.observe(hero);
+  const bar=document.getElementById('stickyBar'),hero=document.querySelector('.hero');
+  const so=new IntersectionObserver((es)=>{es.forEach(e=>{bar.classList.toggle('show',!e.isIntersecting)})},{threshold:0});
+  if(hero)so.observe(hero);
 </script>
 </body>
 </html>
