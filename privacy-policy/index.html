@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<title>นโยบายความเป็นส่วนตัว — FlowLanding</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="นโยบายความเป็นส่วนตัวของ FlowLanding Co. สอดคล้องกับ PDPA พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream-0: #FBF6EE;
+    --cream-1: #F6EEDF;
+    --cream-2: #EFE3CE;
+    --cream-3: #E6D5B8;
+    --red-50:  #FBEAE3;
+    --red-200: #EAB29C;
+    --red-400: #D5613D;
+    --red-500: #C5421C;
+    --red-600: #A8321A;
+    --red-700: #7A2114;
+    --red-800: #4F1A12;
+    --gold-300: #F6CE69;
+    --gold-400: #F2B731;
+    --gold-500: #DBA01D;
+    --gold-600: #B07A12;
+    --ink-900: #1A1410;
+    --ink-700: #3E332B;
+    --ink-500: #6F5F52;
+    --ink-400: #8A7868;
+    --ink-300: #B0A293;
+    --line: rgba(64, 30, 18, 0.10);
+    --line-soft: rgba(64, 30, 18, 0.05);
+    --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,251,243,0.50));
+    --glass-border: 1px solid rgba(255,255,255,0.7);
+    --glass-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 0 0 1px rgba(124, 50, 26, 0.04),
+      0 24px 60px -28px rgba(124, 50, 26, 0.30),
+      0 6px 18px -8px rgba(124, 50, 26, 0.14);
+    --grad-warm: radial-gradient(60% 70% at 70% 20%, rgba(245,182,49,0.22), transparent 60%),
+                 radial-gradient(50% 60% at 10% 90%, rgba(213,97,61,0.18), transparent 60%),
+                 radial-gradient(80% 90% at 50% 50%, rgba(255,243,225,1) 0%, rgba(246,238,223,1) 60%, rgba(238,222,196,1) 100%);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "IBM Plex Sans Thai", "IBM Plex Sans", system-ui, sans-serif;
+    color: var(--ink-900);
+    background: var(--grad-warm);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  ::selection { background: rgba(213,97,61,0.25); }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+  @media (max-width: 720px){ .wrap { padding: 0 22px; } }
+
+  h1, h2, h3, h4 { font-family: "Noto Serif Thai", "Instrument Serif", serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink-900); margin: 0; }
+
+  /* NAV */
+  nav.top {
+    position: sticky; top: 16px; z-index: 50;
+    margin: 16px auto 0;
+    max-width: 1240px;
+    padding: 0 32px;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,251,243,0.55));
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(22px) saturate(140%);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink-900); }
+  .brand img { width: 28px; height: 28px; }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--ink-700); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; border-radius: 999px; transition: background .2s;
+  }
+  .back-link:hover { background: rgba(255,255,255,0.6); color: var(--ink-900); }
+  .back-link svg { width: 16px; height: 16px; }
+
+  /* CONTENT */
+  .legal-hero {
+    text-align: center;
+    padding: 72px 0 40px;
+  }
+  .legal-hero h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: -0.015em;
+  }
+  .legal-hero .subtitle {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--ink-500);
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red-600);
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(213,97,61,0.18);
+    backdrop-filter: blur(8px);
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red-500); box-shadow: 0 0 0 3px rgba(213,97,61,0.18);
+  }
+
+  .legal-card {
+    max-width: 780px;
+    margin: 0 auto 80px;
+    padding: 48px 56px 56px;
+    border-radius: var(--radius-lg);
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(12px);
+  }
+  @media (max-width: 720px) {
+    .legal-card { padding: 32px 24px 40px; }
+    .legal-hero { padding: 56px 0 32px; }
+  }
+
+  .legal-card h2 {
+    font-size: clamp(20px, 2.4vw, 26px);
+    margin: 48px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--red-700);
+  }
+  .legal-card h2:first-child { margin-top: 0; }
+  .legal-card h3 {
+    font-size: 18px;
+    margin: 28px 0 10px;
+    color: var(--ink-700);
+  }
+  .legal-card p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-700);
+  }
+  .legal-card ul, .legal-card ol {
+    margin: 0 0 14px;
+    padding-left: 24px;
+  }
+  .legal-card li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-700);
+    margin-bottom: 6px;
+  }
+  .legal-card strong { color: var(--ink-900); font-weight: 600; }
+  .legal-card a { color: var(--red-600); text-decoration: underline; text-underline-offset: 3px; }
+  .legal-card a:hover { color: var(--red-500); }
+  .legal-card hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 32px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 0 40px;
+    background: var(--cream-1);
+    border-top: 1px solid var(--line-soft);
+  }
+  .ft-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 32px; }
+  @media (max-width:880px){ .ft-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width:520px){ .ft-grid { grid-template-columns: 1fr; } }
+  .ft-brand p { margin-top: 14px; color: var(--ink-500); font-size: 14px; max-width: 280px; }
+  .ft-col h5 { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-500); margin: 0 0 16px; font-weight: 500; }
+  .ft-col a, .ft-col span { display: block; color: var(--ink-700); font-size: 14px; padding: 4px 0; text-decoration: none; }
+  .ft-col a:hover { color: var(--red-600); }
+  .ft-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .ft-bottom .copy { font-size: 13px; color: var(--ink-500); }
+  .ft-bottom .tag { font-size: 13px; color: var(--ink-500); }
+  .ft-bottom .tag em { color: var(--red-600); font-style: italic; font-family: "Instrument Serif", serif; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <img src="../assets/flowlanding-logo.png" alt="FlowLanding" />
+      <span>FlowLanding</span>
+    </a>
+    <a class="back-link" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      กลับหน้าแรก
+    </a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>นโยบายความเป็นส่วนตัว</h1>
+    <p class="subtitle">FlowLanding Co. — ปรับปรุงล่าสุด: 26 สิงหาคม 2569</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="legal-card">
+
+    <p>FlowLanding ให้บริการออกแบบเว็บไซต์ Landing Page ระบบ LINE Official Account เพจ Facebook และระบบ Automation/AI สำหรับผู้ประกอบการ SME นโยบายฉบับนี้อธิบายว่าเราเก็บ ใช้ และดูแลข้อมูลส่วนบุคคลของคุณอย่างไรเมื่อคุณใช้งานเว็บไซต์ flowlanding.co หรือใช้บริการของเรา สอดคล้องกับพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</p>
+
+    <h2>1. ข้อมูลที่เราเก็บรวบรวม</h2>
+    <p>เราเก็บข้อมูลเท่าที่จำเป็นต่อการให้บริการ ได้แก่:</p>
+    <ul>
+      <li><strong>ข้อมูลติดต่อ</strong> — ชื่อ, เบอร์โทรศัพท์, อีเมล, LINE ID ที่คุณกรอกผ่านฟอร์มติดต่อบนเว็บไซต์ หรือส่งข้อความมาทาง LINE Official Account (@flowlanding) หรือ Facebook Page ของเรา</li>
+      <li><strong>ข้อมูลธุรกิจ</strong> — รายละเอียดธุรกิจที่คุณให้เรามาเพื่อออกแบบ/พัฒนาระบบ (เช่น ชื่อธุรกิจ, ประเภทสินค้า/บริการ, เนื้อหาที่ใช้สร้างเว็บไซต์หรือเพจ)</li>
+      <li><strong>ข้อมูลการใช้งานเว็บไซต์</strong> — ข้อมูลทั่วไปที่เบราว์เซอร์ส่งมาอัตโนมัติ (เช่น หน้าที่เข้าชม, ประเภทอุปกรณ์) เพื่อปรับปรุงประสบการณ์การใช้งานเว็บไซต์</li>
+      <li><strong>ข้อมูลจากบัญชี Facebook/LINE ของลูกค้า (เฉพาะกรณีใช้บริการ Automation)</strong> — เมื่อคุณใช้บริการระบบ Automation ของเรา (เช่น ระบบ FlowBot ตอบแชท) เราอาจเข้าถึงข้อมูลที่จำเป็นต่อการทำงานของระบบนั้นๆ ตามสิทธิ์ที่คุณอนุญาตผ่านแพลตฟอร์มนั้นโดยตรง (ดูรายละเอียดเพิ่มเติมในหัวข้อ 5)</li>
+    </ul>
+    <p>เรา<strong>ไม่เก็บ</strong>ข้อมูลบัตรเครดิต/การเงินโดยตรงบนระบบของเรา — การชำระเงิน (ถ้ามี) ดำเนินการผ่านผู้ให้บริการชำระเงินภายนอกที่มีมาตรฐานความปลอดภัยของตัวเอง</p>
+
+    <h2>2. วัตถุประสงค์ในการใช้ข้อมูล</h2>
+    <p>เราใช้ข้อมูลที่เก็บรวบรวมเพื่อ:</p>
+    <ul>
+      <li>ติดต่อกลับและให้คำปรึกษาตามที่คุณสอบถาม</li>
+      <li>จัดทำใบเสนอราคา ออกแบบ และพัฒนาเว็บไซต์/ระบบตามที่ตกลงว่าจ้าง</li>
+      <li>ดำเนินการระบบ Automation ที่คุณสมัครใช้บริการ (เช่น ตอบแชทอัตโนมัติ, จัดตารางโพสต์)</li>
+      <li>ปรับปรุงคุณภาพบริการและเว็บไซต์ของเรา</li>
+      <li>ติดต่อแจ้งข่าวสาร/โปรโมชั่นที่เกี่ยวข้อง (เฉพาะกรณีคุณยินยอม และสามารถยกเลิกได้ทุกเมื่อ)</li>
+    </ul>
+
+    <h2>3. การเปิดเผยข้อมูลต่อบุคคลที่สาม</h2>
+    <p>เรา<strong>ไม่ขายหรือให้เช่าข้อมูลส่วนบุคคล</strong>ของคุณแก่บุคคลภายนอกเพื่อวัตถุประสงค์ทางการตลาด เราอาจเปิดเผยข้อมูลเฉพาะกรณี:</p>
+    <ul>
+      <li>ผู้ให้บริการที่เราใช้เพื่อดำเนินธุรกิจ (เช่น ผู้ให้บริการ Hosting, Google Workspace, ระบบ Automation n8n) ซึ่งมีหน้าที่รักษาความลับของข้อมูลตามสัญญาที่เราทำร่วมกัน</li>
+      <li>แพลตฟอร์มที่คุณเชื่อมต่อเอง (เช่น Meta/Facebook, LINE) ตามสิทธิ์ที่คุณอนุญาตให้แก่แอปพลิเคชันของเราโดยตรงผ่านระบบ OAuth ของแพลตฟอร์มนั้น</li>
+      <li>กรณีมีข้อกำหนดทางกฎหมายบังคับให้เปิดเผย</li>
+    </ul>
+
+    <h2>4. ระยะเวลาการเก็บข้อมูล</h2>
+    <p>เราเก็บข้อมูลของคุณตราบเท่าที่จำเป็นต่อวัตถุประสงค์ที่ระบุไว้ในนโยบายนี้ หรือตามที่กฎหมายกำหนด คุณสามารถขอให้เราลบข้อมูลของคุณได้ตลอดเวลา (ดูหัวข้อ 6)</p>
+
+    <h2 id="data-deletion">5. การเข้าถึงข้อมูลผ่าน Facebook/Meta Platform</h2>
+    <p>FlowLanding ใช้แอปพลิเคชัน <strong>"FlowLanding AutoPost"</strong> ที่ลงทะเบียนกับ Meta for Developers เพื่อดำเนินการดังนี้<strong>บนเพจ Facebook ของ FlowLanding เองเท่านั้น</strong>:</p>
+    <ul>
+      <li>สร้างและตั้งเวลาโพสต์บนเพจ Facebook ของเรา (สิทธิ์ <code>pages_manage_posts</code>) ตามเนื้อหาที่ทีมงานของเราจัดทำและอนุมัติล่วงหน้าผ่าน Content Calendar ภายใน</li>
+      <li>เพิ่มความคิดเห็นประชาสัมพันธ์ใต้โพสต์ของเราเอง (สิทธิ์ <code>pages_manage_engagement</code>)</li>
+      <li>อ่านสถานะการเผยแพร่โพสต์เพื่อยืนยันว่าขึ้นสำเร็จ (สิทธิ์ <code>pages_read_engagement</code>, <code>pages_show_list</code>, <code>pages_read_user_content</code>)</li>
+    </ul>
+    <p>แอปนี้<strong>ไม่ได้ใช้งานในนามของผู้ใช้อื่นหรือเพจอื่นใด</strong> นอกจากเพจ Facebook ของ FlowLanding เอง ไม่มีการเก็บข้อมูลส่วนบุคคลของผู้ติดตามเพจ (followers) ผ่านแอปนี้แต่อย่างใด</p>
+    <p><strong>การลบข้อมูล (Data Deletion):</strong> หากต้องการให้เราลบข้อมูลใดๆ ที่เกี่ยวข้องกับการเชื่อมต่อ Facebook/Meta ของคุณ กรุณาติดต่อ <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a> — เราจะดำเนินการลบภายใน 30 วัน</p>
+
+    <h2>6. สิทธิ์ของเจ้าของข้อมูล</h2>
+    <p>ตาม PDPA คุณมีสิทธิ์:</p>
+    <ul>
+      <li>ขอเข้าถึง/ขอสำเนาข้อมูลส่วนบุคคลของคุณ</li>
+      <li>ขอแก้ไขข้อมูลที่ไม่ถูกต้อง</li>
+      <li>ขอลบหรือระงับการใช้ข้อมูล</li>
+      <li>ถอนความยินยอมที่เคยให้ไว้ (เช่น ยกเลิกรับข่าวสาร)</li>
+    </ul>
+    <p>หากต้องการใช้สิทธิ์เหล่านี้ ติดต่อเราได้ตามช่องทางด้านล่าง</p>
+
+    <h2>7. คุกกี้ (Cookies)</h2>
+    <p>เว็บไซต์ของเราอาจใช้คุกกี้พื้นฐานเพื่อให้เว็บไซต์ทำงานได้ปกติและวิเคราะห์การใช้งานเว็บไซต์ คุณสามารถปิดการใช้งานคุกกี้ผ่านการตั้งค่าเบราว์เซอร์ของคุณได้</p>
+
+    <h2>8. การเปลี่ยนแปลงนโยบาย</h2>
+    <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงจะแจ้งผ่านหน้านี้พร้อมวันที่ปรับปรุงล่าสุด</p>
+
+    <h2>9. ติดต่อเรา</h2>
+    <p>หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวนี้ ติดต่อได้ที่:</p>
+    <ul>
+      <li><strong>อีเมล:</strong> <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a></li>
+      <li><strong>โทรศัพท์:</strong> <a href="tel:0928695668">092 869 5668</a></li>
+      <li><strong>LINE:</strong> <a href="https://line.me/R/ti/p/@flowlanding">@flowlanding</a></li>
+      <li><strong>Facebook:</strong> <a href="https://facebook.com/flowlanding">facebook.com/flowlanding</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a class="brand" href="/"><img src="../assets/flowlanding-logo.png" alt="" /><span>FlowLanding</span></a>
+        <p>AI Business Systems for SME Owners — ลดงาน · เพิ่มกำไร · ควบคุมธุรกิจได้มากขึ้น</p>
+      </div>
+      <div class="ft-col">
+        <h5>Solutions</h5>
+        <a href="/#solution">Automation</a>
+        <a href="/#solution">Owner Dashboard</a>
+        <a href="/#solution">Workflow Design</a>
+        <a href="/#use-cases">AI Doc Processing</a>
+        <a href="/service/website">Website for Business</a>
+      </div>
+      <div class="ft-col">
+        <h5>Company</h5>
+        <a href="/#about">About</a>
+        <a href="/#why">Why us</a>
+        <a href="/#use-cases">Case studies</a>
+        <a href="/#cta">Free analysis</a>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a>
+        <a href="tel:+66928695668">+66 92 869 5668</a>
+        <a href="https://line.me/R/ti/p/@flowlanding">LINE: @flowlanding</a>
+        <a href="https://www.facebook.com/flowlanding" target="_blank" rel="noopener">Facebook: FlowLanding</a>
+        <span>flowlanding.co</span>
+      </div>
+      <div class="ft-col">
+        <h5>Legal</h5>
+        <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
+        <a href="/terms">ข้อกำหนดการให้บริการ</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="copy">&copy; 2026 FlowLanding &middot; All rights reserved</div>
+      <div class="tag">Built for SME owners <em>who deserve their time back</em></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

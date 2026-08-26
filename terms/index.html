@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<title>ข้อกำหนดการให้บริการ — FlowLanding</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="ข้อกำหนดการให้บริการของ FlowLanding Co. เงื่อนไขการใช้บริการออกแบบเว็บไซต์ Automation และ AI สำหรับ SME" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream-0: #FBF6EE;
+    --cream-1: #F6EEDF;
+    --cream-2: #EFE3CE;
+    --cream-3: #E6D5B8;
+    --red-50:  #FBEAE3;
+    --red-200: #EAB29C;
+    --red-400: #D5613D;
+    --red-500: #C5421C;
+    --red-600: #A8321A;
+    --red-700: #7A2114;
+    --red-800: #4F1A12;
+    --gold-300: #F6CE69;
+    --gold-400: #F2B731;
+    --gold-500: #DBA01D;
+    --gold-600: #B07A12;
+    --ink-900: #1A1410;
+    --ink-700: #3E332B;
+    --ink-500: #6F5F52;
+    --ink-400: #8A7868;
+    --ink-300: #B0A293;
+    --line: rgba(64, 30, 18, 0.10);
+    --line-soft: rgba(64, 30, 18, 0.05);
+    --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,251,243,0.50));
+    --glass-border: 1px solid rgba(255,255,255,0.7);
+    --glass-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 0 0 1px rgba(124, 50, 26, 0.04),
+      0 24px 60px -28px rgba(124, 50, 26, 0.30),
+      0 6px 18px -8px rgba(124, 50, 26, 0.14);
+    --grad-warm: radial-gradient(60% 70% at 70% 20%, rgba(245,182,49,0.22), transparent 60%),
+                 radial-gradient(50% 60% at 10% 90%, rgba(213,97,61,0.18), transparent 60%),
+                 radial-gradient(80% 90% at 50% 50%, rgba(255,243,225,1) 0%, rgba(246,238,223,1) 60%, rgba(238,222,196,1) 100%);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "IBM Plex Sans Thai", "IBM Plex Sans", system-ui, sans-serif;
+    color: var(--ink-900);
+    background: var(--grad-warm);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  ::selection { background: rgba(213,97,61,0.25); }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+  @media (max-width: 720px){ .wrap { padding: 0 22px; } }
+
+  h1, h2, h3, h4 { font-family: "Noto Serif Thai", "Instrument Serif", serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink-900); margin: 0; }
+
+  /* NAV */
+  nav.top {
+    position: sticky; top: 16px; z-index: 50;
+    margin: 16px auto 0;
+    max-width: 1240px;
+    padding: 0 32px;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,251,243,0.55));
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(22px) saturate(140%);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink-900); }
+  .brand img { width: 28px; height: 28px; }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--ink-700); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; border-radius: 999px; transition: background .2s;
+  }
+  .back-link:hover { background: rgba(255,255,255,0.6); color: var(--ink-900); }
+  .back-link svg { width: 16px; height: 16px; }
+
+  /* CONTENT */
+  .legal-hero {
+    text-align: center;
+    padding: 72px 0 40px;
+  }
+  .legal-hero h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: -0.015em;
+  }
+  .legal-hero .subtitle {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--ink-500);
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red-600);
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(213,97,61,0.18);
+    backdrop-filter: blur(8px);
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red-500); box-shadow: 0 0 0 3px rgba(213,97,61,0.18);
+  }
+
+  .legal-card {
+    max-width: 780px;
+    margin: 0 auto 80px;
+    padding: 48px 56px 56px;
+    border-radius: var(--radius-lg);
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(12px);
+  }
+  @media (max-width: 720px) {
+    .legal-card { padding: 32px 24px 40px; }
+    .legal-hero { padding: 56px 0 32px; }
+  }
+
+  .legal-card h2 {
+    font-size: clamp(20px, 2.4vw, 26px);
+    margin: 48px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--red-700);
+  }
+  .legal-card h2:first-child { margin-top: 0; }
+  .legal-card h3 {
+    font-size: 18px;
+    margin: 28px 0 10px;
+    color: var(--ink-700);
+  }
+  .legal-card p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-700);
+  }
+  .legal-card ul, .legal-card ol {
+    margin: 0 0 14px;
+    padding-left: 24px;
+  }
+  .legal-card li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-700);
+    margin-bottom: 6px;
+  }
+  .legal-card strong { color: var(--ink-900); font-weight: 600; }
+  .legal-card a { color: var(--red-600); text-decoration: underline; text-underline-offset: 3px; }
+  .legal-card a:hover { color: var(--red-500); }
+  .legal-card hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 32px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 0 40px;
+    background: var(--cream-1);
+    border-top: 1px solid var(--line-soft);
+  }
+  .ft-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 32px; }
+  @media (max-width:880px){ .ft-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width:520px){ .ft-grid { grid-template-columns: 1fr; } }
+  .ft-brand p { margin-top: 14px; color: var(--ink-500); font-size: 14px; max-width: 280px; }
+  .ft-col h5 { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-500); margin: 0 0 16px; font-weight: 500; }
+  .ft-col a, .ft-col span { display: block; color: var(--ink-700); font-size: 14px; padding: 4px 0; text-decoration: none; }
+  .ft-col a:hover { color: var(--red-600); }
+  .ft-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .ft-bottom .copy { font-size: 13px; color: var(--ink-500); }
+  .ft-bottom .tag { font-size: 13px; color: var(--ink-500); }
+  .ft-bottom .tag em { color: var(--red-600); font-style: italic; font-family: "Instrument Serif", serif; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <img src="../assets/flowlanding-logo.png" alt="FlowLanding" />
+      <span>FlowLanding</span>
+    </a>
+    <a class="back-link" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      กลับหน้าแรก
+    </a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="legal-hero">
+    <span class="eyebrow">Terms of Service</span>
+    <h1>ข้อกำหนดการให้บริการ</h1>
+    <p class="subtitle">FlowLanding Co. — ปรับปรุงล่าสุด: 26 สิงหาคม 2569</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="legal-card">
+
+    <p>การเข้าใช้งานเว็บไซต์ flowlanding.co หรือใช้บริการใดๆ ของ FlowLanding ถือว่าคุณยอมรับข้อกำหนดการให้บริการฉบับนี้ กรุณาอ่านให้เข้าใจก่อนใช้บริการ</p>
+
+    <h2>1. เกี่ยวกับบริการ</h2>
+    <p>FlowLanding ให้บริการออกแบบและพัฒนา:</p>
+    <ul>
+      <li>เว็บไซต์และ Landing Page สำหรับธุรกิจ SME</li>
+      <li>ระบบ LINE Official Account และ Rich Menu</li>
+      <li>การจัดการเพจ Facebook (รวมถึงระบบตั้งเวลาโพสต์อัตโนมัติ)</li>
+      <li>ระบบ Automation และ AI Dashboard สำหรับติดตามธุรกิจ</li>
+      <li>เอกสารธุรกิจ (Company Profile, Catalog, Proposal ฯลฯ)</li>
+    </ul>
+    <p>รายละเอียดขอบเขตงาน ระยะเวลาส่งมอบ และราคา จะระบุไว้ในใบเสนอราคา/สัญญาที่ตกลงกันเป็นรายกรณี ข้อกำหนดฉบับนี้ใช้เป็นเงื่อนไขทั่วไปสำหรับทุกบริการ เว้นแต่จะระบุไว้เป็นอย่างอื่นในสัญญาเฉพาะ</p>
+
+    <h2>2. การว่าจ้างและการชำระเงิน</h2>
+    <ul>
+      <li>ราคาบริการอ้างอิงตามใบเสนอราคาที่ FlowLanding จัดทำให้ในแต่ละครั้ง</li>
+      <li>เงื่อนไขการชำระเงิน (มัดจำ/ชำระเต็มจำนวน) จะระบุไว้ในใบเสนอราคา</li>
+      <li>FlowLanding ขอสงวนสิทธิ์ระงับงานหากลูกค้าไม่ชำระเงินตามเงื่อนไขที่ตกลงไว้</li>
+    </ul>
+
+    <h2>3. ขอบเขตความรับผิดชอบ</h2>
+    <ul>
+      <li>FlowLanding จะดำเนินงานตามขอบเขตที่ตกลงกันด้วยความรอบคอบและเป็นมืออาชีพ</li>
+      <li>ลูกค้ามีหน้าที่ตรวจสอบและอนุมัติเนื้อหา/การออกแบบก่อนเผยแพร่จริง — FlowLanding ไม่รับผิดชอบต่อความเสียหายที่เกิดจากเนื้อหาที่ลูกค้าอนุมัติแล้ว</li>
+      <li>สำหรับระบบ Automation (เช่น ระบบตั้งเวลาโพสต์ Facebook) FlowLanding พยายามให้ระบบทำงานถูกต้องและเสถียรที่สุด แต่ไม่รับประกันว่าจะไม่มีข้อผิดพลาดทางเทคนิคที่อยู่นอกเหนือการควบคุม (เช่น การเปลี่ยนแปลงนโยบาย/ระบบของแพลตฟอร์มบุคคลที่สาม อย่าง Meta หรือ LINE)</li>
+      <li>FlowLanding ไม่รับผิดชอบต่อความเสียหายทางอ้อมหรือการสูญเสียผลกำไรที่เกิดจากการใช้บริการ เว้นแต่กรณีที่เกิดจากความประมาทเลินเล่ออย่างร้ายแรงของ FlowLanding เอง</li>
+    </ul>
+
+    <h2>4. ทรัพย์สินทางปัญญา</h2>
+    <ul>
+      <li>งานออกแบบ/โค้ด/ระบบที่ FlowLanding พัฒนาให้ จะโอนกรรมสิทธิ์แก่ลูกค้าเมื่อชำระเงินครบถ้วนตามที่ตกลงในสัญญา เว้นแต่ระบุไว้เป็นอย่างอื่น</li>
+      <li>FlowLanding ขอสงวนสิทธิ์นำผลงาน (ที่ไม่มีข้อมูลลับของลูกค้า) ไปแสดงเป็นผลงาน (Portfolio) เพื่อการตลาด เว้นแต่ลูกค้าแจ้งความประสงค์ไม่ให้เผยแพร่เป็นลายลักษณ์อักษร</li>
+    </ul>
+
+    <h2>5. การใช้งาน API และแพลตฟอร์มบุคคลที่สาม</h2>
+    <p>บริการบางส่วนของ FlowLanding (เช่น ระบบตั้งเวลาโพสต์ Facebook, ระบบ LINE OA) เชื่อมต่อกับแพลตฟอร์มของ Meta, LINE และผู้ให้บริการอื่น การใช้บริการเหล่านี้ต้องปฏิบัติตามข้อกำหนดการใช้งานของแพลตฟอร์มนั้นๆ ด้วย (เช่น Meta Platform Terms, LINE Developers Agreement) FlowLanding ไม่รับผิดชอบต่อการเปลี่ยนแปลงนโยบายหรือการระงับบัญชีที่เกิดจากฝั่งแพลตฟอร์มบุคคลที่สามเหล่านั้น</p>
+
+    <h2>6. การยกเลิกบริการ</h2>
+    <ul>
+      <li>ลูกค้าสามารถยกเลิกบริการได้ตามเงื่อนไขที่ระบุในสัญญาแต่ละฉบับ</li>
+      <li>FlowLanding ขอสงวนสิทธิ์ระงับหรือยกเลิกการให้บริการหากพบการใช้งานที่ผิดกฎหมาย ละเมิดข้อกำหนดของแพลตฟอร์มบุคคลที่สาม หรือสร้างความเสียหายต่อ FlowLanding</li>
+    </ul>
+
+    <h2>7. การเปลี่ยนแปลงข้อกำหนด</h2>
+    <p>FlowLanding อาจปรับปรุงข้อกำหนดฉบับนี้เป็นครั้งคราว โดยจะแจ้งผ่านหน้านี้พร้อมวันที่ปรับปรุงล่าสุด การใช้บริการต่อหลังการปรับปรุงถือว่ายอมรับข้อกำหนดฉบับใหม่</p>
+
+    <h2>8. กฎหมายที่ใช้บังคับ</h2>
+    <p>ข้อกำหนดฉบับนี้อยู่ภายใต้บังคับกฎหมายไทย</p>
+
+    <h2>9. ติดต่อเรา</h2>
+    <ul>
+      <li><strong>อีเมล:</strong> <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a></li>
+      <li><strong>โทรศัพท์:</strong> <a href="tel:0928695668">092 869 5668</a></li>
+      <li><strong>LINE:</strong> <a href="https://line.me/R/ti/p/@flowlanding">@flowlanding</a></li>
+      <li><strong>Facebook:</strong> <a href="https://facebook.com/flowlanding">facebook.com/flowlanding</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a class="brand" href="/"><img src="../assets/flowlanding-logo.png" alt="" /><span>FlowLanding</span></a>
+        <p>AI Business Systems for SME Owners — ลดงาน · เพิ่มกำไร · ควบคุมธุรกิจได้มากขึ้น</p>
+      </div>
+      <div class="ft-col">
+        <h5>Solutions</h5>
+        <a href="/#solution">Automation</a>
+        <a href="/#solution">Owner Dashboard</a>
+        <a href="/#solution">Workflow Design</a>
+        <a href="/#use-cases">AI Doc Processing</a>
+        <a href="/service/website">Website for Business</a>
+      </div>
+      <div class="ft-col">
+        <h5>Company</h5>
+        <a href="/#about">About</a>
+        <a href="/#why">Why us</a>
+        <a href="/#use-cases">Case studies</a>
+        <a href="/#cta">Free analysis</a>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <a href="mailto:flowlanding.info@gmail.com">flowlanding.info@gmail.com</a>
+        <a href="tel:+66928695668">+66 92 869 5668</a>
+        <a href="https://line.me/R/ti/p/@flowlanding">LINE: @flowlanding</a>
+        <a href="https://www.facebook.com/flowlanding" target="_blank" rel="noopener">Facebook: FlowLanding</a>
+        <span>flowlanding.co</span>
+      </div>
+      <div class="ft-col">
+        <h5>Legal</h5>
+        <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
+        <a href="/terms">ข้อกำหนดการให้บริการ</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="copy">&copy; 2026 FlowLanding &middot; All rights reserved</div>
+      <div class="tag">Built for SME owners <em>who deserve their time back</em></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
